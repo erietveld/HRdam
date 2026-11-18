@@ -146,6 +146,9 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 .concl .c.hi .n{background:var(--sn);color:var(--ink)}
 
 /* chrome */
+#navprev,#navnext{display:none;position:fixed;bottom:12px;width:52px;height:52px;border:0;border-radius:50%;background:rgba(6,43,65,.55);color:#fff;font-size:34px;line-height:48px;z-index:20;-webkit-tap-highlight-color:transparent}
+#navprev{left:12px}#navnext{right:12px}
+@media (hover:none) and (pointer:coarse){#navprev,#navnext{display:block}}
 #prog{position:fixed;left:0;bottom:0;height:5px;background:var(--sn);z-index:20;transition:width .3s}
 #black{position:fixed;inset:0;background:#000;z-index:50;display:none}
 #overview{position:fixed;inset:0;background:rgba(3,26,40,.96);z-index:40;display:none;overflow:auto;padding:30px}
@@ -389,6 +392,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 <div id="black"></div>
 <div id="overview"><div id="grid"></div></div>
 <div id="prog"></div>
+<button id="navprev" aria-label="Vorige slide">‹</button><button id="navnext" aria-label="Volgende slide">›</button>
 
 <script>
 (function(){
@@ -458,6 +462,17 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
       case 'r':case 'R':reloadDemo();break;
     }
   });
+
+  // Touch: swipe left/right, or use the on-screen buttons (touch devices only).
+  document.getElementById('navnext').onclick=function(){next()};
+  document.getElementById('navprev').onclick=function(){prev()};
+  var tx=null,ty=null;
+  addEventListener('touchstart',function(e){if(ov.classList.contains('on')||e.touches.length!==1)return;tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+  addEventListener('touchend',function(e){
+    if(tx===null)return;
+    var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5){dx<0?next():prev()}
+  },{passive:true});
 
   var h=parseInt(location.hash.slice(1),10);
   show(isNaN(h)?0:h-1,true);
