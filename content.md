@@ -259,13 +259,6 @@ When software becomes cheap, it stops being an edge. The edge moves to things th
 - **Service, reliability and trust:** being the one that keeps working and takes responsibility.
 - **Speed of learning:** testing, adjusting and improving faster than others.
 
-**Examples:**
-
-- An app to bet against yourself to keep your resolutions can be cloned in a weekend. What cannot be cloned quickly: a community, partners who provide the stakes, and the trust of users.
-- A tool that groups demand to get discounts is easy to build. Having enough buyers and sellers on both sides is the hard part.
-- A container with batteries for grid balancing: the software is a small part. Hardware, grid connection and contracts are the business.
-- Capturing the knowledge of older colleagues: the real work is getting people to share it and trusting you with it, not the software.
-
 **Questions worth asking:**
 
 - If someone copied my app tomorrow, what would they still be missing?
