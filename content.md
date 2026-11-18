@@ -48,6 +48,8 @@ The cost and time needed for a first prototype are dropping sharply. An entrepre
 
 **The bottleneck shifts** from "can we build it?" to "are we building the right thing, and can we take responsibility for it?"
 
+The idea is also moving closer to the build. The people who have the idea (entrepreneurs, domain experts, students) can now build a first version themselves, without handing it over to someone else first.
+
 This lets you go through the cycle faster: idea → hypothesis → prototype → test with the target group → learn → adjust.
 
 > **Key message:** AI democratizes software development, but also the responsibility for what you build.
@@ -219,16 +221,11 @@ The middle road:
 - benefit from built-in security, permissions, data and management;
 - use AI to make the configuration or application faster.
 
-### Demo 2: ServiceNow Build Agent, building and reviewing
+### Demo 2: ServiceNow Build Agent, reviewing
 
-**Step 1, build.** A business process is described:
+An application built earlier with the ServiceNow Build Agent is opened (building it live takes too long). The result lives inside a managed platform, with roles, access control, data model, audit trail and workflows.
 
-> "Employees at a company request a new laptop. The request needs approval from their manager, then goes to IT to order. The employee gets updates and IT can see all open requests."
-
-- An application or workflow is generated.
-- The result lands inside a managed platform, with roles, access control, data model, audit trail and workflows.
-
-**Step 2, review.** The AI is then asked to review what was built:
+The AI is asked to review it:
 
 > "Act as a security, privacy and product reviewer. What risks do you see before this application is used by real users?"
 
@@ -242,7 +239,7 @@ It assesses the solution on:
 - dependencies;
 - human oversight.
 
-Build in a managed platform, and find the risks before your users do.
+A managed platform gives better building blocks. Find the risks before your users do.
 
 > A platform doesn't take away responsibility, but it gives you better building blocks and guardrails.
 

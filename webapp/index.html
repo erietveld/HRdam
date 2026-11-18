@@ -111,6 +111,10 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 /* closing */
 .qr{width:420px;height:420px;background:#fff;border:4px solid var(--ink);border-radius:30px;padding:28px}
 .qr svg{width:100%;height:100%;display:block}
+.qrcap{font-size:30px;color:var(--ink2);line-height:1.35;width:420px}
+.qrcap b{display:block;color:var(--ink);font-size:34px;font-weight:800;margin-bottom:6px;text-align:center}
+.qrcap ul{list-style:none;padding:0;margin:0}
+.qrcap li{margin-top:4px}
 
 /* demo 2: two prompts */
 .prompt.p2{font-size:34px;padding:48px 40px 36px;margin-top:50px;flex:1}
@@ -142,8 +146,6 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 .concl .c.hi .n{background:var(--sn);color:var(--ink)}
 
 /* chrome */
-#timer{position:fixed;right:14px;bottom:10px;font:700 18px ui-monospace,Menlo,monospace;color:#062b41;background:rgba(255,255,255,.55);padding:3px 10px;border-radius:10px;z-index:20;opacity:.55}
-#timer.amber{background:#e0a82e;opacity:1}#timer.red{background:#d9534f;color:#fff;opacity:1}
 #prog{position:fixed;left:0;bottom:0;height:5px;background:var(--sn);z-index:20;transition:width .3s}
 #black{position:fixed;inset:0;background:#000;z-index:50;display:none}
 #overview{position:fixed;inset:0;background:rgba(3,26,40,.96);z-index:40;display:none;overflow:auto;padding:30px}
@@ -185,7 +187,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 
 <!-- 1 What is vibe coding -->
 <section class="slide" data-title="Wat is vibe coding?">
-  <div class="kicker">1 · Wat is vibe coding?</div>
+  <div class="kicker">2 · Wat is vibe coding?</div>
   <h2>Software maken door het te <span class="hl">beschrijven</span></h2>
   <div class="loop" style="margin-top:70px;display:grid;grid-template-columns:370px auto 370px auto 370px auto 370px;column-gap:26px;justify-content:center;align-items:stretch">
     <div class="card pop"><div class="ico">🗣️</div><div class="t">Beschrijf</div><div class="d">“Bouw een app die…”</div></div><div class="arrow" style="align-self:center">→</div>
@@ -203,8 +205,8 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 </section>
 
 <!-- 2 Why now -->
-<section class="slide" data-title="Waarom nu?">
-  <div class="kicker">2 · Waarom, en waarom nu?</div>
+<section class="slide" data-title="Waarom kan dit nu?">
+  <div class="kicker">3 · Waarom kan dit nu?</div>
   <h2>AI <span class="hl">begrijpt</span> nu…</h2>
   <div class="row grow" style="margin-top:50px;align-items:center">
     <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">💬</div><div class="t">Taal</div></div>
@@ -218,23 +220,21 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 </section>
 
 <!-- 3 Bottleneck -->
-<section class="slide" data-title="De bottleneck verschuift">
-  <div class="kicker">2 · Waarom, en waarom nu?</div>
+<section class="slide" data-title="Iedereen kan bouwen: de bottleneck verschuift">
+  <div class="kicker">4 · Het effect: iedereen kan nu bouwen</div>
   <h2>De bottleneck <span class="hl">verschuift</span></h2>
   <div class="row grow" style="align-items:center;justify-content:center;gap:50px">
     <div class="card pop" style="flex:1;text-align:center;padding:60px 30px"><div style="font-size:70px;font-weight:800;text-decoration:line-through;text-decoration-color:var(--rose);text-decoration-thickness:8px;color:var(--ink2)">Kunnen we het bouwen?</div></div>
     <div class="arrow" style="font-size:120px">→</div>
     <div class="card pop" style="flex:1.2;text-align:center;padding:60px 30px;background:#e6f8e2;border-color:var(--sage)"><div style="font-size:64px;font-weight:800;line-height:1.15">Moeten we het bouwen, en kunnen we er <span class="hl">verantwoordelijkheid</span> voor nemen?</div></div>
   </div>
-  <div class="row" style="justify-content:center;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:34px">
-    <span class="pill">💡 idee</span><span class="small">→</span><span class="pill">🤔 hypothese</span><span class="small">→</span><span class="pill">🧩 prototype</span><span class="small">→</span><span class="pill">👥 test</span><span class="small">→</span><span class="pill">📚 leren</span><span class="small">→</span><span class="pill">🔧 bijsturen</span>
-  </div>
+  <div class="small" style="text-align:center;font-size:46px;font-weight:800;color:var(--ink);margin-bottom:40px">Wie het idee heeft, kan het nu ook zelf bouwen 💡→🧩</div>
   <div class="callout">AI democratiseert het bouwen, <b>en de verantwoordelijkheid</b></div>
 </section>
 
 <!-- 4 What can you do -->
 <section class="slide" data-title="Wat kun je ermee?">
-  <div class="kicker">3 · Wat kun je ermee?</div>
+  <div class="kicker">5 · Wat kun je ermee?</div>
   <h2>Van simpel naar <span class="hl">serieus</span></h2>
   <div class="stairs">
     <div class="step" style="height:38%;background:#e6f8e2"><div class="ico">🌐</div>Landings&shy;pagina<small>groepskorting</small></div>
@@ -249,15 +249,13 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 </section>
 
 <!-- 5 Demo 1 -->
-<section class="slide" data-title="Demo 1">
-  <div><span class="badge">DEMO 1</span> <span class="small" style="margin-left:20px;font-size:40px">Ook deze presentatie is gevibecoded</span></div>
-  <div class="prompt" style="font-size:64px;margin-top:80px">Pas de Demo 1 slide aan: voeg katjes die hem langzaam opeten.</div>
-  <div class="value"><span class="e">🐱</span><span>Van idee naar iets werkends in minuten, gewoon door in gewone taal te zeggen wat je wilt.</span></div>
+<section class="slide" data-title="Demo 1" style="padding:0;box-shadow:none">
+  <iframe id="demo1" src="demo1.html" title="Demo 1" tabindex="-1" style="pointer-events:none;position:absolute;inset:0;width:1920px;height:1080px;border:0"></iframe>
 </section>
 
 <!-- 6 Maturity ladder -->
 <section class="slide" data-title="Van leuke demo naar echt gebruik">
-  <div class="kicker">4 · Van leuke demo naar echt gebruik</div>
+  <div class="kicker">7 · Van leuke demo naar echt gebruik</div>
   <h2>Hoe <span class="hl">serieus</span> wordt het?</h2>
   <div class="row grow" style="margin-top:20px;gap:60px;align-items:stretch;min-height:0">
     <div class="ladder">
@@ -282,7 +280,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 
 <!-- 7 Risks: three levels (incl. data and security) -->
 <section class="slide" data-title="Risico’s: drie niveaus">
-  <div class="kicker">5 · Risico’s, oplopend in ernst</div>
+  <div class="kicker">8 · Risico’s, oplopend in ernst</div>
   <h2>Drie niveaus van <span class="hl">oeps</span></h2>
   <div class="row grow" style="align-items:flex-end;gap:30px;margin-top:30px">
     <div class="risk pop" style="height:50%;flex:.8"><div class="bar" style="background:#f3e3b8;flex:1"><div class="stamp">werkt op mijn laptop ✅</div><div class="ico">🔧</div><div class="t">Persoonlijk<br><span style="font-weight:600;font-size:34px">Het gaat stuk en je verliest de controle</span></div></div></div>
@@ -298,7 +296,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 
 <!-- 9 AI has many hats -->
 <section class="slide" data-title="AI draagt veel petten">
-  <div class="kicker">6 · AI is niet alleen de bouwer</div>
+  <div class="kicker">9 · AI is niet alleen de bouwer</div>
   <h2>AI draagt <span class="hl">veel petten</span></h2>
   <div class="hats grow">
     <div class="card pop"><div class="ico">🔨</div><div><div class="t">Bouwen</div><div class="d">code, interface, data</div></div></div>
@@ -313,7 +311,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 
 <!-- 11 Build buy configure -->
 <section class="slide" data-title="Bouwen, kopen of configureren?">
-  <div class="kicker">7 · Bouwen, kopen of configureren?</div>
+  <div class="kicker">10 · Bouwen, kopen of configureren?</div>
   <h2>Drie wegen naar <span class="hl">je doel</span></h2>
   <div class="row grow" style="margin-top:34px;gap:34px;align-items:stretch;min-height:0">
     <div class="card pop" style="flex:1"><div class="ico">🔨</div><div class="t">Bouwen</div><div class="d">Echt onderscheidend, een klein beheersbaar experiment, en je hebt de tijd om het te onderhouden.</div></div>
@@ -326,33 +324,21 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 
 <!-- 11 Demo 2 (build + review) -->
 <section class="slide" data-title="Demo 2: ServiceNow Build Agent">
-  <div><span class="badge">DEMO 2</span> <span class="small" style="margin-left:20px;font-size:40px">ServiceNow Build Agent: bouwen én reviewen</span></div>
+  <div><span class="badge">DEMO 2</span> <span class="small" style="margin-left:20px;font-size:40px">ServiceNow Build Agent: reviewen</span></div>
   <div class="row" style="gap:40px;align-items:stretch">
     <div class="col" style="flex:1">
-      <div class="prompt p2" data-step="1 · bouwen">Medewerkers van een bedrijf vragen een nieuwe laptop aan. De aanvraag moet worden goedgekeurd door de manager en gaat daarna naar IT om te bestellen. De medewerker krijgt updates en IT ziet alle openstaande aanvragen.</div>
-      <div class="pills"><span class="pill line">rollen</span><span class="pill line">toegangsbeheer</span><span class="pill line">datamodel</span><span class="pill line">audit trail</span><span class="pill line">workflows</span></div>
-    </div>
-    <div class="col" style="flex:1">
-      <div class="prompt p2" data-step="2 · reviewen">Treed op als security-, privacy- en productreviewer. Welke risico’s zie je voordat deze applicatie door echte gebruikers wordt gebruikt?</div>
+      <div class="prompt p2" data-step="reviewen">Treed op als security-, privacy- en productreviewer. Welke risico’s zie je voordat deze applicatie door echte gebruikers wordt gebruikt?</div>
       <div class="pills"><span class="pill line">persoonsgegevens</span><span class="pill line">autorisatie</span><span class="pill line">geheimen</span><span class="pill line">foutafhandeling</span><span class="pill line">logging</span><span class="pill line">menselijk toezicht</span></div>
     </div>
   </div>
-  <div class="value" style="font-size:42px"><span class="e">🛡️</span><span>Bouwen in een beheerd platform, en de risico’s vinden voordat je gebruikers dat doen.</span></div>
+  <div class="value" style="font-size:42px"><span class="e">🛡️</span><span>Een beheerd platform geeft betere bouwstenen. Vind de risico’s voordat je gebruikers dat doen.</span></div>
 </section>
 
 <!-- 12 Copy + edge -->
 <section class="slide" data-title="Iedereen kan kopiëren: wat is jouw voorsprong?">
-  <div class="kicker">8 · Als jij het in een dag kunt bouwen…</div>
+  <div class="kicker">12 · Als jij het in een dag kunt bouwen…</div>
   <h2>…kan <span class="hl">iedereen</span> dat</h2>
   <div class="row grow" style="gap:40px;margin-top:20px;min-height:0">
-    <div class="col pop" style="flex:0 0 520px;justify-content:center;gap:30px">
-      <div class="row" style="gap:20px;align-items:center;justify-content:center">
-        <div class="col" style="align-items:center;gap:14px"><div class="screen mini"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="b1"></div><div class="b2"></div><div class="b3"></div><div class="btn"></div></div></div><div class="pill" style="font-size:26px">Jouw app</div></div>
-        <div style="font-size:70px">🖨️</div>
-        <div class="col" style="align-items:center;gap:14px"><div class="screen mini ghost"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="b1"></div><div class="b2"></div><div class="b3"></div><div class="btn"></div></div></div><div class="pill warn" style="font-size:26px;text-align:center">Hun app morgen 😬</div></div>
-      </div>
-      <div class="callout" style="margin-top:0;font-size:40px">Snelheid werkt twee kanten op.</div>
-    </div>
     <div class="col" style="flex:1;justify-content:center;gap:14px">
       <div class="small" style="font-weight:800;color:var(--green);font-size:30px">Wat is moeilijk te kopiëren?</div>
       <div class="edge">
@@ -371,7 +357,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 
 <!-- 13 Conclusions -->
 <section class="slide" data-title="Drie conclusies">
-  <div class="kicker">9 · Afsluiting</div>
+  <div class="kicker">13 · Afsluiting</div>
   <h2>Drie <span class="hl">conclusies</span></h2>
   <div class="concl grow">
     <div class="c pop"><div class="n">1</div><div class="ct">Bouwen is makkelijker dan ooit</div></div>
@@ -391,7 +377,8 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
       <div class="sub" style="font-size:44px;margin-top:6px">linkedin.com/in/alexhendrikse</div>
     </div>
     <div class="col mid" style="flex:.6;gap:20px">
-      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#062b41" d="M0 0.5h7m3 0h1m2 0h3m2 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m4 0h4m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h6m1 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h2m1 0h2m7 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h3m2 0h1m5 0h2m-21 1h1m5 0h1m1 0h3m3 0h2m1 0h3m1 0h2m2 0h3m-26 1h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h5m2 0h2m1 0h2m-28 1h1m1 0h1m3 0h1m1 0h2m5 0h3m4 0h1m-22 1h3m1 0h1m1 0h1m1 0h2m3 0h2m3 0h2m2 0h1m1 0h1m-24 1h1m2 0h3m1 0h1m2 0h5m3 0h1m1 0h2m4 0h1m-25 1h2m1 0h1m3 0h1m1 0h8m1 0h1m1 0h1m2 0h2m-28 1h4m1 0h2m1 0h2m2 0h4m1 0h1m1 0h4m1 0h2m-25 1h4m2 0h1m1 0h5m1 0h1m3 0h5m1 0h1m1 0h1m-28 1h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m3 0h1m1 0h2m-27 1h2m1 0h1m4 0h1m1 0h1m1 0h1m2 0h6m1 0h3m1 0h3m-29 1h3m3 0h1m1 0h1m4 0h4m2 0h2m4 0h1m2 0h1m-29 1h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h3m-25 1h1m2 0h2m1 0h4m2 0h1m2 0h4m1 0h5m1 0h3m-21 1h1m3 0h2m1 0h1m1 0h2m1 0h1m3 0h2m-26 1h7m2 0h2m2 0h5m1 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m2 0h2m1 0h2m2 0h1m2 0h2m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h2m1 0h2m2 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m3 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m4 0h2m1 0h2m1 0h7m-28 1h1m5 0h1m4 0h1m2 0h1m1 0h1m6 0h1m1 0h2m1 0h1m-29 1h7m1 0h3m1 0h3m2 0h1m1 0h1m2 0h5"/></svg></div>
+      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 29 29" shape-rendering="crispEdges"><path stroke="#062b41" d="M4 4.5h7m2 0h5m2 0h1m1 0h2m2 0h7M4 5.5h1m5 0h1m1 0h2m1 0h2m1 0h7m1 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m2 0h1m2 0h4m2 0h1m3 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m2 0h1m1 0h3m3 0h3m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M13 11.5h3m1 0h2m1 0h2M4 12.5h1m1 0h1m1 0h1m1 0h1m4 0h2m1 0h4m6 0h1m2 0h1M5 13.5h3m6 0h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1m2 0h1M8 14.5h5m4 0h1m3 0h1m3 0h2m1 0h1m1 0h3M4 15.5h1m1 0h1m1 0h2m3 0h1m2 0h1m2 0h3m1 0h2m2 0h2m2 0h1M4 16.5h3m1 0h4m1 0h3m3 0h3m2 0h3m2 0h1m1 0h2M4 17.5h1m1 0h2m4 0h2m1 0h1m1 0h1m2 0h2m2 0h3m2 0h1m2 0h1M5 18.5h12m1 0h1m7 0h1m1 0h2m1 0h2M5 19.5h5m1 0h3m3 0h3m1 0h2m1 0h3m2 0h1m1 0h1M5 20.5h1m4 0h1m1 0h3m3 0h1m1 0h2m1 0h2m1 0h2m1 0h1m1 0h2M7 21.5h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h1m4 0h2m2 0h2m1 0h1M4 22.5h1m3 0h1m1 0h1m1 0h2m1 0h3m2 0h1m4 0h1m1 0h2m2 0h2M5 23.5h1m3 0h1m1 0h1m7 0h3m1 0h7m1 0h1M4 24.5h1m1 0h1m3 0h1m1 0h1m1 0h2m4 0h2m1 0h6M12 25.5h2m2 0h2m2 0h2m1 0h2m3 0h1m1 0h3M4 26.5h7m4 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h2m1 0h2M4 27.5h1m5 0h1m3 0h2m1 0h2m2 0h1m2 0h1m3 0h2m1 0h2M4 28.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m2 0h2m1 0h5m3 0h1M4 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h3m3 0h1m2 0h2m1 0h3M4 30.5h1m1 0h3m1 0h1m1 0h3m1 0h3m1 0h2m1 0h1m3 0h3m2 0h1M4 31.5h1m5 0h1m2 0h2m2 0h3m1 0h5m2 0h1m2 0h1M4 32.5h7m1 0h1m2 0h1m1 0h4m2 0h3m1 0h2m2 0h2"/></svg></div>
+      <div class="qrcap"><b>Scan voor de materialen</b><ul><li>📄 Volledige inhoud van de talk</li><li>🛡️ Beveiligings-prompt voor je eigen project</li><li>🖥️ Deze presentatie</li></ul></div>
     </div>
   </div>
   <svg class="logo" viewBox="0 0 132 20" role="img" aria-label="ServiceNow" style="height:38px;position:absolute;left:120px;bottom:60px"><use href="#servicenow-logo"/></svg>
@@ -402,37 +389,35 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 <div id="black"></div>
 <div id="overview"><div id="grid"></div></div>
 <div id="prog"></div>
-<div id="timer">0:00</div>
 
 <script>
 (function(){
   var stage=document.getElementById('stage');
   var slides=[].slice.call(stage.querySelectorAll('.slide'));
   var cur=0,black=document.getElementById('black'),ov=document.getElementById('overview');
-  var timerEl=document.getElementById('timer'),prog=document.getElementById('prog');
-  var t0=null;
+  var prog=document.getElementById('prog');
 
   function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='translate(-50%,-50%) scale('+s+')';}
   addEventListener('resize',fit);fit();
 
 
+  function reloadDemo(){var f=stage.querySelector('#demo1');if(f)f.src='demo1.html?t='+Date.now();}
+  // Keep keyboard focus on the presentation, never inside the demo iframe.
+  function keepFocus(){try{document.activeElement.blur()}catch(e){}window.focus()}
+  var df=stage.querySelector('#demo1');if(df)df.addEventListener('load',keepFocus);
+  // After the live demo: switching back to the browser reloads the demo slide.
+  addEventListener('focus',function(){if(slides[cur].getAttribute('data-title')==='Demo 1')reloadDemo()});
+
   function show(i,fromHash){
     cur=Math.max(0,Math.min(slides.length-1,i));
     slides.forEach(function(s,k){s.classList.toggle('active',k===cur)});
     prog.style.width=(100*cur/(slides.length-1))+'%';
+    if(slides[cur].getAttribute('data-title')==='Demo 1')reloadDemo();
     if(!fromHash){try{history.replaceState(null,'','#'+(cur+1))}catch(e){}}
   }
-  function startTimer(){if(t0===null)t0=Date.now();}
-  function next(){if(cur===0)startTimer();show(cur+1)}
+  function next(){show(cur+1)}
   function prev(){show(cur-1)}
 
-  function tick(){
-    if(t0===null){timerEl.textContent='0:00';return}
-    var s=Math.floor((Date.now()-t0)/1000),m=Math.floor(s/60);
-    timerEl.textContent=m+':'+('0'+(s%60)).slice(-2);
-    timerEl.className=m>=30?'red':(m>=25?'amber':'');
-  }
-  setInterval(tick,500);
 
   function buildOverview(){
     var g=document.getElementById('grid');g.innerHTML='';
@@ -470,7 +455,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
       case 'Home':e.preventDefault();show(0);break;
       case 'End':e.preventDefault();show(slides.length-1);break;
       case 'o':case 'O':toggleOv(true);break;
-      case 't':case 'T':t0=Date.now();tick();break;
+      case 'r':case 'R':reloadDemo();break;
     }
   });
 
