@@ -1,0 +1,13 @@
+# Private working files (not for students)
+CLAUDE.md
+context.md
+outline.md
+demoscript.md
+speakernotes.md
+presentationplan.md
+webapp/notes.html
+
+# Tooling and OS
+.claude/
+.DS_Store
+*.log

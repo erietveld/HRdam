@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe coding</title>
+<style>
+:root{
+  --bg:#ffffff; --bg2:#e8eff4; --card:#ffffff; --ink:#062b41; --ink2:#4a6577;
+  --green:#0b6e8a; --sage:#c4f0bc; --sn:#62d84e; --terra:#c8693b; --mustard:#62d84e;
+  --rose:#d9534f; --line:#d3dfe7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#031a28;
+  font-family:ui-rounded,"SF Pro Rounded","Avenir Next","Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;color:var(--ink)}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:var(--bg);overflow:hidden}
+.slide{position:absolute;inset:0;padding:100px 120px 90px;box-shadow:inset 0 16px 0 var(--ink);display:none;flex-direction:column;background:var(--bg)}
+.slide.active{display:flex;animation:fade .35s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+.slide.active .pop{animation:pop .5s cubic-bezier(.2,.8,.3,1) backwards}
+.slide.active .pop:nth-child(2){animation-delay:.08s}.slide.active .pop:nth-child(3){animation-delay:.16s}
+.slide.active .pop:nth-child(4){animation-delay:.24s}.slide.active .pop:nth-child(5){animation-delay:.32s}
+.slide.active .pop:nth-child(6){animation-delay:.4s}.slide.active .pop:nth-child(7){animation-delay:.48s}
+.slide.active .pop:nth-child(8){animation-delay:.56s}
+.thumb .slide.active *{animation:none!important}
+
+/* type */
+.kicker{font-size:30px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:18px}
+h1{font-size:104px;line-height:1.02;font-weight:800;letter-spacing:-.02em}
+h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
+.sub{font-size:44px;color:var(--ink2);margin-top:20px;line-height:1.25}
+.small{font-size:32px;color:var(--ink2)}
+.hl{background:linear-gradient(transparent 62%,var(--sage) 62%);padding:0 .08em}
+.center{align-items:center;text-align:center}
+.grow{flex:1}
+.row{display:flex;gap:36px}
+.col{display:flex;flex-direction:column}
+.mid{align-items:center;justify-content:center}
+
+/* cards */
+.card{background:var(--card);border:3px solid var(--line);border-radius:36px;padding:34px 36px;box-shadow:0 10px 0 var(--bg2)}
+.card .ico{font-size:88px;line-height:1}
+.card .t{font-size:46px;font-weight:800;margin-top:14px;line-height:1.1}
+.card .d{font-size:34px;color:var(--ink2);margin-top:10px;line-height:1.25}
+.pill{display:inline-block;font-size:34px;font-weight:700;padding:12px 28px;border-radius:999px;background:var(--sage);color:var(--ink)}
+.pill.alt{background:#d7ebf3}.pill.warn{background:#f6d4cf}.pill.line{background:transparent;border:3px solid var(--line)}
+.callout{margin-top:auto;font-size:44px;font-weight:700;background:var(--ink);color:var(--bg);border-radius:30px;padding:28px 44px;text-align:center;line-height:1.2}
+.callout b{color:var(--sn)}
+.arrow{font-size:80px;color:var(--green);align-self:center;font-weight:800}
+.tag{position:absolute;font-size:26px;font-weight:700;background:var(--mustard);color:var(--ink);padding:6px 16px;border-radius:999px;white-space:nowrap}
+
+/* opening */
+.open{background:radial-gradient(1200px 700px at 85% 30%,#dff6da 0,transparent 70%),var(--bg)}
+.bubble{position:relative;background:var(--card);border:4px solid var(--ink);border-radius:44px;padding:30px 40px;font-size:42px;font-weight:700;max-width:620px;line-height:1.2}
+.bubble:after{content:"";position:absolute;left:90px;bottom:-34px;width:50px;height:50px;background:var(--card);border-right:4px solid var(--ink);border-bottom:4px solid var(--ink);transform:rotate(45deg) skew(10deg,10deg)}
+.logo{height:46px;aspect-ratio:132/20;width:auto}
+.corner{position:absolute;right:60px;bottom:40px;font-size:28px;color:var(--ink2);opacity:.8}
+
+/* loop */
+.loop{display:flex;align-items:center;justify-content:center;gap:26px;margin-top:90px}
+.loop .card{width:370px;text-align:center;padding:50px 20px}
+.loop .card .ico{font-size:150px}.loop .card .t{font-size:56px}
+.back{margin:40px auto 0;font-size:44px;font-weight:700;color:var(--green);border:4px dashed var(--sage);border-radius:999px;padding:12px 44px}
+
+/* demo */
+.badge{display:inline-block;background:var(--ink);color:var(--sn);font-size:44px;font-weight:800;padding:12px 40px;border-radius:999px;letter-spacing:.06em}
+.prompt{margin-top:50px;background:#073049;color:#e8f3fa;border-radius:36px;padding:50px 60px;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:54px;line-height:1.4;position:relative}
+.prompt:before{content:"> prompt";position:absolute;top:-22px;left:44px;background:var(--sn);color:var(--ink);font-size:24px;font-weight:800;padding:4px 18px;border-radius:999px;font-family:inherit}
+.value{margin-top:auto;display:flex;gap:28px;align-items:center;background:#e6f8e2;border:3px solid var(--sage);border-radius:32px;padding:30px 44px;font-size:46px;font-weight:700;line-height:1.2}
+.value .e{font-size:84px}
+
+/* staircase */
+.stairs{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));align-items:end;gap:14px;flex:1;margin-top:30px}
+.step{position:relative;overflow-wrap:anywhere;border-radius:24px 24px 0 0;padding:20px 10px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;font-weight:800;font-size:31px;line-height:1.1}
+.step .ico{font-size:76px;margin-bottom:8px}
+.step small{display:block;margin-top:10px;font-size:23px;font-weight:600;color:var(--ink2);background:rgba(255,255,255,.65);border-radius:12px;padding:4px 8px}
+
+/* ladder */
+.ladder{display:flex;flex-direction:column;gap:9px;flex:1.4;justify-content:center}
+.rung{display:flex;align-items:center;gap:24px;border-radius:26px;padding:6px 30px;font-size:44px;font-weight:800;border:3px solid var(--line);background:var(--card)}
+.rung .ico{font-size:58px}
+.rung small{font-size:28px;font-weight:600;color:var(--ink2);display:block;margin-top:2px}
+
+/* risks */
+.risk{flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+.risk .bar{border-radius:36px 36px 0 0;padding:34px;text-align:center;position:relative}
+.risk .ico{font-size:110px}
+.risk .t{font-size:46px;font-weight:800;line-height:1.1;margin-top:10px}
+.stamp{position:absolute;right:-16px;top:-34px;transform:rotate(8deg);border:5px solid var(--green);color:var(--green);background:var(--card);font-size:30px;font-weight:800;padding:6px 18px;border-radius:14px}
+
+/* hats */
+.hat{flex:1;text-align:center}
+.hat .ico{font-size:200px;line-height:1}
+.hat .t{font-size:64px;font-weight:800;margin-top:10px}
+
+/* copy */
+.screen{width:560px;background:var(--card);border:4px solid var(--ink);border-radius:26px;overflow:hidden;box-shadow:0 14px 0 var(--bg2)}
+.screen .bar{height:46px;background:var(--ink);display:flex;gap:10px;align-items:center;padding:0 18px}
+.screen .bar i{width:16px;height:16px;border-radius:50%;background:var(--sage);display:block}
+.screen .body{padding:28px;display:flex;flex-direction:column;gap:16px}
+.screen .b1{height:46px;background:var(--sage);border-radius:12px;width:70%}
+.screen .b2{height:26px;background:var(--bg2);border-radius:10px}
+.screen .b3{height:26px;background:var(--bg2);border-radius:10px;width:85%}
+.screen .btn{height:60px;background:var(--green);border-radius:16px;width:45%;margin-top:10px}
+.screen.ghost{border-style:dashed;opacity:.8}
+
+.q{background:var(--mustard);border-radius:30px;padding:22px 44px;font-size:42px;font-weight:800;text-align:center;line-height:1.2}
+.note{font-size:30px;color:var(--ink2);text-align:center;margin-top:18px}
+
+/* closing */
+.qr{width:420px;height:420px;background:#fff;border:4px solid var(--ink);border-radius:30px;padding:28px}
+.qr svg{width:100%;height:100%;display:block}
+
+/* demo 2: two prompts */
+.prompt.p2{font-size:34px;padding:48px 40px 36px;margin-top:50px;flex:1}
+.prompt.p2:before{content:"> " attr(data-step)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pills .pill{font-size:26px;padding:8px 20px}
+
+/* hats grid */
+.hats{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px;align-content:center}
+.hats .card{display:flex;align-items:center;gap:30px;padding:30px 36px}
+.hats .card .ico{font-size:96px}
+.hats .card .t{margin-top:0;font-size:50px}
+.hats .card .d{font-size:30px;margin-top:6px}
+
+/* copy + edge */
+.mini{zoom:.38}
+.edge{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.edge .card{display:flex;align-items:center;gap:20px;padding:16px 24px;border-radius:28px;box-shadow:0 7px 0 var(--bg2)}
+.edge .card .ico{font-size:54px}
+.edge .card .t{margin-top:0;font-size:31px}
+.edge .card .d{margin-top:4px;font-size:24px}
+
+/* conclusions */
+.concl{display:flex;flex-direction:column;justify-content:center;gap:34px;margin-top:30px}
+.concl .c{display:flex;align-items:center;gap:46px;background:var(--card);border:3px solid var(--line);border-radius:36px;padding:26px 44px;box-shadow:0 10px 0 var(--bg2)}
+.concl .n{flex:none;width:130px;height:130px;border-radius:50%;background:var(--ink);color:var(--sn);font-size:78px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.concl .ct{font-size:58px;font-weight:800;line-height:1.1}
+.concl .c.hi{background:#e6f8e2;border-color:var(--sage)}
+.concl .c.hi .n{background:var(--sn);color:var(--ink)}
+
+/* chrome */
+#timer{position:fixed;right:14px;bottom:10px;font:700 18px ui-monospace,Menlo,monospace;color:#062b41;background:rgba(255,255,255,.55);padding:3px 10px;border-radius:10px;z-index:20;opacity:.55}
+#timer.amber{background:#e0a82e;opacity:1}#timer.red{background:#d9534f;color:#fff;opacity:1}
+#prog{position:fixed;left:0;bottom:0;height:5px;background:var(--sn);z-index:20;transition:width .3s}
+#black{position:fixed;inset:0;background:#000;z-index:50;display:none}
+#overview{position:fixed;inset:0;background:rgba(3,26,40,.96);z-index:40;display:none;overflow:auto;padding:30px}
+#overview.on{display:block}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.cell{cursor:pointer;color:#fff;font:600 14px system-ui}
+.cell .thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;border:3px solid transparent}
+.cell.cur .thumb{border-color:var(--sn)}
+.cell .thumb .inner{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
+.cell .thumb .slide{display:flex!important;animation:none}
+.cell span{display:block;margin-top:6px}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="servicenow-logo" viewBox="0 0 132 20"><path d="M32.022,6.391a5.626,5.626,0,0,0-3.61,1.3V6.523H25.119V19.35h3.425v-8.2a4.073,4.073,0,0,1,3.109-1.588,3.494,3.494,0,0,1,1.374.206V6.479a5.851,5.851,0,0,0-1.005-.088" fill="#000000" fill-rule="evenodd"/><path d="M2.16,15.436a5.369,5.369,0,0,0,3.5,1.269c.922,0,1.633-.45,1.633-1.084,0-1.931-6.191-1.243-6.191-5.369,0-2.459,2.371-3.993,4.9-3.993a7.9,7.9,0,0,1,4.32,1.3L8.72,10.04a4.3,4.3,0,0,0-2.45-.872c-.948,0-1.739.37-1.739,1.031,0,1.666,6.192,1.005,6.192,5.448,0,2.46-2.4,3.967-5.085,3.967A8.815,8.815,0,0,1,.5,17.9Z" fill="#000000" fill-rule="evenodd"/><path d="M23.657,12.817c0-3.57-2.5-6.558-6.034-6.558-3.794,0-6.218,3.12-6.218,6.691A6.4,6.4,0,0,0,18.1,19.614a6.919,6.919,0,0,0,5.243-2.3l-1.95-1.957a4.515,4.515,0,0,1-3.214,1.481A3.36,3.36,0,0,1,14.725,13.8h8.853A5.735,5.735,0,0,0,23.657,12.817Zm-8.774-1.533a2.775,2.775,0,0,1,2.74-2.248,2.552,2.552,0,0,1,2.53,2.248Z" fill="#000000" fill-rule="evenodd"/><polygon points="41.19 14.351 44.694 6.523 48.252 6.523 42.376 19.35 40.005 19.35 34.129 6.523 37.686 6.523 41.19 14.351" fill="#000000" fill-rule="evenodd"/><path d="M51.128.5A2.2,2.2,0,1,1,48.888,2.7,2.2,2.2,0,0,1,51.128.5" fill="#000000" fill-rule="evenodd"/><rect x="49.415" y="6.523" width="3.425" height="12.827" fill="#000000"/><path d="M67,16.731a6.766,6.766,0,0,1-5.8,2.883,6.68,6.68,0,1,1,.026-13.355,6.808,6.808,0,0,1,5.375,2.565l-2.424,2.142a3.7,3.7,0,0,0-2.951-1.534A3.433,3.433,0,0,0,57.78,12.95a3.383,3.383,0,0,0,3.531,3.49,3.741,3.741,0,0,0,3.056-1.692Z" fill="#000000" fill-rule="evenodd"/><path d="M79.442,17.313a6.918,6.918,0,0,1-5.243,2.3,6.4,6.4,0,0,1-6.692-6.664c0-3.571,2.424-6.691,6.218-6.691,3.53,0,6.033,2.988,6.033,6.558a5.635,5.635,0,0,1-.079.979H70.826a3.36,3.36,0,0,0,3.452,3.041,4.52,4.52,0,0,0,3.215-1.481Zm-3.188-6.029a2.551,2.551,0,0,0-2.529-2.248,2.774,2.774,0,0,0-2.74,2.248Z" fill="#000000" fill-rule="evenodd"/><path d="M81.12,19.35V6.523h3.293V7.554a5.625,5.625,0,0,1,3.609-1.295,5.747,5.747,0,0,1,4.427,2.063,6.482,6.482,0,0,1,1.317,4.5V19.35H90.341v-6.8a3.11,3.11,0,0,0-.764-2.407,2.69,2.69,0,0,0-1.923-.714,4.076,4.076,0,0,0-3.109,1.587V19.35Z" fill="#000000" fill-rule="evenodd"/><path d="M102.586,6.259A7.5,7.5,0,0,0,97.419,19.21a1.481,1.481,0,0,0,1.926.1,5.355,5.355,0,0,1,6.394,0,1.485,1.485,0,0,0,1.937-.113,7.5,7.5,0,0,0-5.09-12.94M102.542,17.5a3.637,3.637,0,0,1-3.734-3.733,3.734,3.734,0,1,1,7.468,0,3.637,3.637,0,0,1-3.734,3.733" fill="#62d84e" fill-rule="evenodd"/><polygon points="116.788 19.35 114.237 19.35 109.15 6.523 112.57 6.523 115.359 13.853 118.094 6.523 120.952 6.523 123.662 13.853 126.475 6.523 129.896 6.523 124.809 19.35 122.258 19.35 119.523 12.046 116.788 19.35" fill="#000000" fill-rule="evenodd"/><path d="M129.935,17.9h-.289v.543H129.4V16.957h.6a.476.476,0,0,1,.478.478.469.469,0,0,1-.295.432l.338.579h-.268Zm-.289-.219H130a.249.249,0,0,0,0-.5h-.351Z" fill="#000000"/><path d="M129.9,16.348a1.379,1.379,0,1,1-1.378,1.379,1.381,1.381,0,0,1,1.378-1.379m0-.218a1.6,1.6,0,1,0,1.6,1.6,1.6,1.6,0,0,0-1.6-1.6Z" fill="#000000"/></symbol></svg>
+<div id="stage">
+
+<!-- 0 Opening -->
+<section class="slide open" data-title="Opening">
+  <div class="row grow" style="align-items:center;gap:60px">
+    <div class="col" style="flex:1.35">
+      <div class="kicker pop">Gastcollege · Minor Ondernemerschap</div>
+      <h1 class="pop"><span class="hl">Vibe coding</span></h1>
+      <div class="sub pop" style="font-size:48px;color:var(--green);font-weight:700;margin-top:24px">Makkelijk hulpmiddel of groot risico?</div>
+      <div class="sub pop" style="font-weight:700;color:var(--ink);margin-top:44px">Eric Rietveld, MSc</div>
+      <div class="pop" style="font-size:36px;color:var(--ink2);font-weight:700;margin-top:6px">AI Domain Architect</div>
+      <div class="pop" style="margin-top:34px"><svg class="logo" viewBox="0 0 132 20" role="img" aria-label="ServiceNow"><use href="#servicenow-logo"/></svg></div>
+    </div>
+    <div class="col mid pop" style="flex:.8">
+      <div style="position:relative;width:520px;height:460px">
+        <div style="font-size:380px;line-height:1;position:absolute;left:50px;top:40px">💻</div>
+        <div style="font-size:150px;line-height:1;position:absolute;left:0;top:0">✨</div>
+        <div style="font-size:170px;line-height:1;position:absolute;right:0;bottom:0">🚧</div>
+      </div>
+    </div>
+  </div>
+  <div class="corner">In samenwerking met Alex Hendrikse</div>
+</section>
+
+<!-- 1 What is vibe coding -->
+<section class="slide" data-title="Wat is vibe coding?">
+  <div class="kicker">1 · Wat is vibe coding?</div>
+  <h2>Software maken door het te <span class="hl">beschrijven</span></h2>
+  <div class="loop" style="margin-top:70px;display:grid;grid-template-columns:370px auto 370px auto 370px auto 370px;column-gap:26px;justify-content:center;align-items:stretch">
+    <div class="card pop"><div class="ico">🗣️</div><div class="t">Beschrijf</div><div class="d">“Bouw een app die…”</div></div><div class="arrow" style="align-self:center">→</div>
+    <div class="card pop"><div class="ico">⚡</div><div class="t">Genereer</div><div class="d">AI schrijft de code in een paar seconden</div></div><div class="arrow" style="align-self:center">→</div>
+    <div class="card pop"><div class="ico">🧪</div><div class="t">Probeer</div><div class="d">Je klikt erdoor: werkt het zoals bedoeld?</div></div><div class="arrow" style="align-self:center">→</div>
+    <div class="card pop"><div class="ico">💬</div><div class="t">Feedback</div><div class="d">“Maak de knop groter en voeg een filter toe”</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:370px auto 370px auto 370px auto 370px;column-gap:26px;justify-content:center">
+    <div class="pop" style="grid-column:3/8;margin:0 185px;height:90px;border:6px dashed var(--green);border-top:none;border-radius:0 0 50px 50px;position:relative;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:var(--green)">
+      <span style="position:absolute;left:-19px;top:-22px;font-size:40px;line-height:1;background:var(--bg)">▲</span>
+      <span style="background:var(--bg);padding:0 24px;margin-top:40px">↺ herhaal tot het goed is</span>
+    </div>
+  </div>
+  <div class="grow"></div>
+</section>
+
+<!-- 2 Why now -->
+<section class="slide" data-title="Waarom nu?">
+  <div class="kicker">2 · Waarom, en waarom nu?</div>
+  <h2>AI <span class="hl">begrijpt</span> nu…</h2>
+  <div class="row grow" style="margin-top:50px;align-items:center">
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">💬</div><div class="t">Taal</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">💻</div><div class="t">Code</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">🖼️</div><div class="t">Screenshots &amp; ontwerpen</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">🐛</div><div class="t">Foutmeldingen &amp; logs</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">🏗️</div><div class="t">Bestaande software</div></div>
+  </div>
+  <div class="small" style="text-align:center">Kosten en tijd van een prototype: dalen snel 📉</div>
+  <div class="callout">Een werkende demo <b>≠</b> een veilig, onderhoudbaar product</div>
+</section>
+
+<!-- 3 Bottleneck -->
+<section class="slide" data-title="De bottleneck verschuift">
+  <div class="kicker">2 · Waarom, en waarom nu?</div>
+  <h2>De bottleneck <span class="hl">verschuift</span></h2>
+  <div class="row grow" style="align-items:center;justify-content:center;gap:50px">
+    <div class="card pop" style="flex:1;text-align:center;padding:60px 30px"><div style="font-size:70px;font-weight:800;text-decoration:line-through;text-decoration-color:var(--rose);text-decoration-thickness:8px;color:var(--ink2)">Kunnen we het bouwen?</div></div>
+    <div class="arrow" style="font-size:120px">→</div>
+    <div class="card pop" style="flex:1.2;text-align:center;padding:60px 30px;background:#e6f8e2;border-color:var(--sage)"><div style="font-size:64px;font-weight:800;line-height:1.15">Moeten we het bouwen, en kunnen we er <span class="hl">verantwoordelijkheid</span> voor nemen?</div></div>
+  </div>
+  <div class="row" style="justify-content:center;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:34px">
+    <span class="pill">💡 idee</span><span class="small">→</span><span class="pill">🤔 hypothese</span><span class="small">→</span><span class="pill">🧩 prototype</span><span class="small">→</span><span class="pill">👥 test</span><span class="small">→</span><span class="pill">📚 leren</span><span class="small">→</span><span class="pill">🔧 bijsturen</span>
+  </div>
+  <div class="callout">AI democratiseert het bouwen, <b>en de verantwoordelijkheid</b></div>
+</section>
+
+<!-- 4 What can you do -->
+<section class="slide" data-title="Wat kun je ermee?">
+  <div class="kicker">3 · Wat kun je ermee?</div>
+  <h2>Van simpel naar <span class="hl">serieus</span></h2>
+  <div class="stairs">
+    <div class="step" style="height:38%;background:#e6f8e2"><div class="ico">🌐</div>Landings&shy;pagina<small>groepskorting</small></div>
+    <div class="step" style="height:46%;background:#d3f1cc"><div class="ico">📱</div>Klikbaar prototype<small>goede-voornemens-app</small></div>
+    <div class="step" style="height:54%;background:#c0ebb8"><div class="ico">📝</div>Formulier</div>
+    <div class="step" style="height:62%;background:#aee4a4"><div class="ico">📊</div>Dashboard<small>batterij&shy;container</small></div>
+    <div class="step" style="height:70%;background:#9bdb90"><div class="ico">🔀</div>Workflow</div>
+    <div class="step" style="height:78%;background:#88d27c"><div class="ico">🚀</div>MVP</div>
+    <div class="step" style="height:88%;background:#76ca69"><div class="ico">🏢</div>Interne app</div>
+    <div class="step" style="height:98%;background:#62d84e"><div class="ico">🧠</div>Externe app<small>met intelligente workflows</small></div>
+  </div>
+</section>
+
+<!-- 5 Demo 1 -->
+<section class="slide" data-title="Demo 1">
+  <div><span class="badge">DEMO 1</span> <span class="small" style="margin-left:20px;font-size:40px">Ook deze presentatie is gevibecoded</span></div>
+  <div class="prompt" style="font-size:64px;margin-top:80px">Pas de Demo 1 slide aan: voeg katjes die hem langzaam opeten.</div>
+  <div class="value"><span class="e">🐱</span><span>Van idee naar iets werkends in minuten, gewoon door in gewone taal te zeggen wat je wilt.</span></div>
+</section>
+
+<!-- 6 Maturity ladder -->
+<section class="slide" data-title="Van leuke demo naar echt gebruik">
+  <div class="kicker">4 · Van leuke demo naar echt gebruik</div>
+  <h2>Hoe <span class="hl">serieus</span> wordt het?</h2>
+  <div class="row grow" style="margin-top:20px;gap:60px;align-items:stretch;min-height:0">
+    <div class="ladder">
+      <div class="rung pop" style="margin-left:0;background:#e6f8e2"><span class="ico">🧪</span><div>Experiment<small>alleen jij, fictieve data</small></div></div>
+      <div class="rung pop" style="margin-left:50px;background:#d3f1cc"><span class="ico">🧩</span><div>Prototype<small>testen met potentiële gebruikers</small></div></div>
+      <div class="rung pop" style="margin-left:100px;background:#c0ebb8"><span class="ico">🚀</span><div>MVP<small>echte gebruikers, misschien echte data</small></div></div>
+      <div class="rung pop" style="margin-left:150px;background:#aee4a4"><span class="ico">📦</span><div>Product<small>klanten zijn ervan afhankelijk</small></div></div>
+      <div class="rung pop" style="margin-left:200px;background:#9bdb90"><span class="ico">🏛️</span><div>Bedrijfskritisch<small>uitval heeft ernstige gevolgen</small></div></div>
+    </div>
+    <div class="col" style="flex:.55;gap:16px;justify-content:center">
+      <div class="small" style="font-weight:800;font-size:34px">Eisen nemen toe ↗</div>
+      <div><span class="pill">🔒 beveiliging</span></div>
+      <div><span class="pill alt">🕵️ privacy</span></div>
+      <div><span class="pill">🛟 betrouwbaarheid</span></div>
+      <div><span class="pill alt">🎧 support</span></div>
+      <div><span class="pill">💶 kosten</span></div>
+      <div><span class="pill alt">⚖️ wetgeving</span></div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:24px;font-size:42px">MVP = <b>minimum viable</b> product, niet <b>minimum responsible</b> product</div>
+</section>
+
+<!-- 7 Risks: three levels (incl. data and security) -->
+<section class="slide" data-title="Risico’s: drie niveaus">
+  <div class="kicker">5 · Risico’s, oplopend in ernst</div>
+  <h2>Drie niveaus van <span class="hl">oeps</span></h2>
+  <div class="row grow" style="align-items:flex-end;gap:30px;margin-top:30px">
+    <div class="risk pop" style="height:50%;flex:.8"><div class="bar" style="background:#f3e3b8;flex:1"><div class="stamp">werkt op mijn laptop ✅</div><div class="ico">🔧</div><div class="t">Persoonlijk<br><span style="font-weight:600;font-size:34px">Het gaat stuk en je verliest de controle</span></div></div></div>
+    <div class="risk pop" style="height:80%;flex:1.5"><div class="bar" style="background:#efc9a4;flex:1;padding:26px 30px">
+      <div class="ico" style="font-size:80px">🔓</div>
+      <div class="t" style="font-size:44px">Team &amp; organisatie<br><span style="font-weight:600;font-size:34px">Data en beveiliging</span></div>
+      <div style="text-align:left;font-size:30px;font-weight:700;line-height:1.35;margin-top:14px">🪪 Persoonsgegevens in een app<br>🔑 API-sleutels in de code<br>🚪 Authenticatie ≠ autorisatie<br>📤 Data naar een AI-aanbieder</div>
+      <div class="pills" style="justify-content:center;margin-top:14px"><span class="pill alt">🇳🇱 AVG (GDPR)</span><span class="pill alt">Dataminimalisatie</span><span class="pill alt">Doelbinding</span></div>
+    </div></div>
+    <div class="risk pop" style="height:98%;flex:.9"><div class="bar" style="background:#e8a58d;flex:1"><div class="ico">💥</div><div class="t">Klanten<br><span style="font-weight:600;font-size:34px">Zij zijn ervan afhankelijk</span></div></div></div>
+  </div>
+</section>
+
+<!-- 9 AI has many hats -->
+<section class="slide" data-title="AI draagt veel petten">
+  <div class="kicker">6 · AI is niet alleen de bouwer</div>
+  <h2>AI draagt <span class="hl">veel petten</span></h2>
+  <div class="hats grow">
+    <div class="card pop"><div class="ico">🔨</div><div><div class="t">Bouwen</div><div class="d">code, interface, data</div></div></div>
+    <div class="card pop"><div class="ico">🔍</div><div><div class="t">Reviewen</div><div class="d">risico’s en kwetsbaarheden</div></div></div>
+    <div class="card pop"><div class="ico">💡</div><div><div class="t">Brainstormen</div><div class="d">ideeën en scenario’s</div></div></div>
+    <div class="card pop"><div class="ico">📚</div><div><div class="t">Onderzoeken</div><div class="d">markt, concurrenten, regels</div></div></div>
+    <div class="card pop"><div class="ico">🎓</div><div><div class="t">Leren</div><div class="d">laat code en begrippen uitleggen</div></div></div>
+    <div class="card pop"><div class="ico">🧪</div><div><div class="t">Testen</div><div class="d">testcases en randgevallen</div></div></div>
+  </div>
+  <div class="callout">Gebruik AI om <b>kritischer te denken</b>, niet alleen om sneller te bouwen</div>
+</section>
+
+<!-- 11 Build buy configure -->
+<section class="slide" data-title="Bouwen, kopen of configureren?">
+  <div class="kicker">7 · Bouwen, kopen of configureren?</div>
+  <h2>Drie wegen naar <span class="hl">je doel</span></h2>
+  <div class="row grow" style="margin-top:34px;gap:34px;align-items:stretch;min-height:0">
+    <div class="card pop" style="flex:1"><div class="ico">🔨</div><div class="t">Bouwen</div><div class="d">Echt onderscheidend, een klein beheersbaar experiment, en je hebt de tijd om het te onderhouden.</div></div>
+    <div class="card pop" style="flex:1"><div class="ico">🛒</div><div class="t">Kopen</div><div class="d">Standaardprobleem. Het wiel is al tientallen keren uitgevonden.</div>
+      <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:10px"><span class="pill line" style="font-size:28px">Shopify</span><span class="pill line" style="font-size:28px">Mollie</span><span class="pill line" style="font-size:28px">Stripe</span><span class="pill line" style="font-size:28px">HubSpot</span></div></div>
+    <div class="card pop" style="flex:1"><div class="ico">🧩</div><div class="t">Configureren</div><div class="d">Gebruik een platform en voeg je eigen proces en ervaring toe. Beveiliging en rechten zitten er al in.</div></div>
+  </div>
+  <div class="callout" style="margin-top:30px;font-size:40px">Een platform neemt de verantwoordelijkheid niet weg. Het geeft je <b>betere bouwstenen en vangrails.</b></div>
+</section>
+
+<!-- 11 Demo 2 (build + review) -->
+<section class="slide" data-title="Demo 2: ServiceNow Build Agent">
+  <div><span class="badge">DEMO 2</span> <span class="small" style="margin-left:20px;font-size:40px">ServiceNow Build Agent: bouwen én reviewen</span></div>
+  <div class="row" style="gap:40px;align-items:stretch">
+    <div class="col" style="flex:1">
+      <div class="prompt p2" data-step="1 · bouwen">Medewerkers van een bedrijf vragen een nieuwe laptop aan. De aanvraag moet worden goedgekeurd door de manager en gaat daarna naar IT om te bestellen. De medewerker krijgt updates en IT ziet alle openstaande aanvragen.</div>
+      <div class="pills"><span class="pill line">rollen</span><span class="pill line">toegangsbeheer</span><span class="pill line">datamodel</span><span class="pill line">audit trail</span><span class="pill line">workflows</span></div>
+    </div>
+    <div class="col" style="flex:1">
+      <div class="prompt p2" data-step="2 · reviewen">Treed op als security-, privacy- en productreviewer. Welke risico’s zie je voordat deze applicatie door echte gebruikers wordt gebruikt?</div>
+      <div class="pills"><span class="pill line">persoonsgegevens</span><span class="pill line">autorisatie</span><span class="pill line">geheimen</span><span class="pill line">foutafhandeling</span><span class="pill line">logging</span><span class="pill line">menselijk toezicht</span></div>
+    </div>
+  </div>
+  <div class="value" style="font-size:42px"><span class="e">🛡️</span><span>Bouwen in een beheerd platform, en de risico’s vinden voordat je gebruikers dat doen.</span></div>
+</section>
+
+<!-- 12 Copy + edge -->
+<section class="slide" data-title="Iedereen kan kopiëren: wat is jouw voorsprong?">
+  <div class="kicker">8 · Als jij het in een dag kunt bouwen…</div>
+  <h2>…kan <span class="hl">iedereen</span> dat</h2>
+  <div class="row grow" style="gap:40px;margin-top:20px;min-height:0">
+    <div class="col pop" style="flex:0 0 520px;justify-content:center;gap:30px">
+      <div class="row" style="gap:20px;align-items:center;justify-content:center">
+        <div class="col" style="align-items:center;gap:14px"><div class="screen mini"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="b1"></div><div class="b2"></div><div class="b3"></div><div class="btn"></div></div></div><div class="pill" style="font-size:26px">Jouw app</div></div>
+        <div style="font-size:70px">🖨️</div>
+        <div class="col" style="align-items:center;gap:14px"><div class="screen mini ghost"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="b1"></div><div class="b2"></div><div class="b3"></div><div class="btn"></div></div></div><div class="pill warn" style="font-size:26px;text-align:center">Hun app morgen 😬</div></div>
+      </div>
+      <div class="callout" style="margin-top:0;font-size:40px">Snelheid werkt twee kanten op.</div>
+    </div>
+    <div class="col" style="flex:1;justify-content:center;gap:14px">
+      <div class="small" style="font-weight:800;color:var(--green);font-size:30px">Wat is moeilijk te kopiëren?</div>
+      <div class="edge">
+        <div class="card pop"><div class="ico">🤝</div><div><div class="t">Klanten &amp; vertrouwen</div><div class="d">Inzicht, toegang, distributie</div></div></div>
+        <div class="card pop"><div class="ico">👥</div><div><div class="t">Community</div><div class="d">Gebruikers en partners</div></div></div>
+        <div class="card pop"><div class="ico">📊</div><div><div class="t">Data</div><div class="d">Over tijd opgebouwd</div></div></div>
+        <div class="card pop"><div class="ico">📦</div><div><div class="t">Hardware &amp; contracten</div><div class="d">Netaansluiting, vergunningen</div></div></div>
+        <div class="card pop"><div class="ico">🛠️</div><div><div class="t">Service &amp; betrouwbaarheid</div><div class="d">Blijft werken, neemt verantwoordelijkheid</div></div></div>
+        <div class="card pop"><div class="ico">📈</div><div><div class="t">Leersnelheid</div><div class="d">Sneller leren dan anderen</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="q" style="margin-top:24px">Als iemand morgen mijn app kopieert, wat ontbreekt er dan nog?</div>
+  <div class="note">Van wie is wat je met AI bouwt? Goed om uit te zoeken (zie het college van vanochtend).</div>
+</section>
+
+<!-- 13 Conclusions -->
+<section class="slide" data-title="Drie conclusies">
+  <div class="kicker">9 · Afsluiting</div>
+  <h2>Drie <span class="hl">conclusies</span></h2>
+  <div class="concl grow">
+    <div class="c pop"><div class="n">1</div><div class="ct">Bouwen is makkelijker dan ooit</div></div>
+    <div class="c pop"><div class="n">2</div><div class="ct">Een werkend prototype is nog geen verantwoord product</div></div>
+    <div class="c hi pop"><div class="n">3</div><div class="ct">Als iedereen kan bouwen, is software niet je voorsprong</div></div>
+  </div>
+</section>
+
+<!-- 14 Closing -->
+<section class="slide open" data-title="Q&amp;A">
+  <div class="row grow" style="align-items:center;gap:80px">
+    <div class="col" style="flex:1.4">
+      <h1 style="font-size:170px">Q&amp;A 🙋</h1>
+      <div class="sub" style="font-weight:800;color:var(--ink);font-size:56px;margin-top:30px">Eric Rietveld</div>
+      <div class="sub" style="font-size:44px;margin-top:6px">linkedin.com/in/aieric</div>
+      <div class="sub" style="font-weight:800;color:var(--ink);font-size:56px;margin-top:56px">Alex Hendrikse</div>
+      <div class="sub" style="font-size:44px;margin-top:6px">linkedin.com/in/alexhendrikse</div>
+    </div>
+    <div class="col mid" style="flex:.6;gap:20px">
+      <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#062b41" d="M0 0.5h7m3 0h1m2 0h3m2 0h1m3 0h7m-29 1h1m5 0h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m4 0h4m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h6m1 0h4m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h2m1 0h2m7 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h3m2 0h1m5 0h2m-21 1h1m5 0h1m1 0h3m3 0h2m1 0h3m1 0h2m2 0h3m-26 1h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h5m2 0h2m1 0h2m-28 1h1m1 0h1m3 0h1m1 0h2m5 0h3m4 0h1m-22 1h3m1 0h1m1 0h1m1 0h2m3 0h2m3 0h2m2 0h1m1 0h1m-24 1h1m2 0h3m1 0h1m2 0h5m3 0h1m1 0h2m4 0h1m-25 1h2m1 0h1m3 0h1m1 0h8m1 0h1m1 0h1m2 0h2m-28 1h4m1 0h2m1 0h2m2 0h4m1 0h1m1 0h4m1 0h2m-25 1h4m2 0h1m1 0h5m1 0h1m3 0h5m1 0h1m1 0h1m-28 1h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m3 0h1m1 0h2m-27 1h2m1 0h1m4 0h1m1 0h1m1 0h1m2 0h6m1 0h3m1 0h3m-29 1h3m3 0h1m1 0h1m4 0h4m2 0h2m4 0h1m2 0h1m-29 1h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h3m-25 1h1m2 0h2m1 0h4m2 0h1m2 0h4m1 0h5m1 0h3m-21 1h1m3 0h2m1 0h1m1 0h2m1 0h1m3 0h2m-26 1h7m2 0h2m2 0h5m1 0h2m1 0h1m1 0h3m-27 1h1m5 0h1m2 0h2m1 0h2m2 0h1m2 0h2m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h2m1 0h2m2 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m3 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m4 0h2m1 0h2m1 0h7m-28 1h1m5 0h1m4 0h1m2 0h1m1 0h1m6 0h1m1 0h2m1 0h1m-29 1h7m1 0h3m1 0h3m2 0h1m1 0h1m2 0h5"/></svg></div>
+    </div>
+  </div>
+  <svg class="logo" viewBox="0 0 132 20" role="img" aria-label="ServiceNow" style="height:38px;position:absolute;left:120px;bottom:60px"><use href="#servicenow-logo"/></svg>
+</section>
+
+</div>
+
+<div id="black"></div>
+<div id="overview"><div id="grid"></div></div>
+<div id="prog"></div>
+<div id="timer">0:00</div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage');
+  var slides=[].slice.call(stage.querySelectorAll('.slide'));
+  var cur=0,black=document.getElementById('black'),ov=document.getElementById('overview');
+  var timerEl=document.getElementById('timer'),prog=document.getElementById('prog');
+  var t0=null;
+
+  function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='translate(-50%,-50%) scale('+s+')';}
+  addEventListener('resize',fit);fit();
+
+
+  function show(i,fromHash){
+    cur=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===cur)});
+    prog.style.width=(100*cur/(slides.length-1))+'%';
+    if(!fromHash){try{history.replaceState(null,'','#'+(cur+1))}catch(e){}}
+  }
+  function startTimer(){if(t0===null)t0=Date.now();}
+  function next(){if(cur===0)startTimer();show(cur+1)}
+  function prev(){show(cur-1)}
+
+  function tick(){
+    if(t0===null){timerEl.textContent='0:00';return}
+    var s=Math.floor((Date.now()-t0)/1000),m=Math.floor(s/60);
+    timerEl.textContent=m+':'+('0'+(s%60)).slice(-2);
+    timerEl.className=m>=30?'red':(m>=25?'amber':'');
+  }
+  setInterval(tick,500);
+
+  function buildOverview(){
+    var g=document.getElementById('grid');g.innerHTML='';
+    slides.forEach(function(s,k){
+      var c=document.createElement('div');c.className='cell'+(k===cur?' cur':'');
+      var th=document.createElement('div');th.className='thumb';
+      var inner=document.createElement('div');inner.className='inner';
+      var clone=s.cloneNode(true);clone.classList.add('active');
+      inner.appendChild(clone);th.appendChild(inner);
+      c.appendChild(th);
+      var l=document.createElement('span');l.textContent=(k+1)+'. '+s.getAttribute('data-title').replace('&amp;','&');
+      c.appendChild(l);
+      c.onclick=function(){toggleOv(false);show(k)};
+      g.appendChild(c);
+      requestAnimationFrame(function(){inner.style.transform='scale('+(th.clientWidth/1920)+')'});
+    });
+  }
+  function toggleOv(on){
+    if(on===undefined)on=!ov.classList.contains('on');
+    ov.classList.toggle('on',on);
+    if(on)buildOverview();
+  }
+
+  addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    var k=e.key;
+    if(ov.classList.contains('on')){
+      if(k==='Escape'||k==='o'||k==='O'){toggleOv(false);e.preventDefault()}return;
+    }
+    if(k==='b'||k==='B'||k==='.'){black.style.display=black.style.display==='block'?'none':'block';e.preventDefault();return}
+    if(black.style.display==='block'){black.style.display='none';if(k==='Escape')return}
+    switch(k){
+      case 'ArrowRight':case ' ':case 'Enter':case 'PageDown':e.preventDefault();next();break;
+      case 'ArrowLeft':case 'PageUp':e.preventDefault();prev();break;
+      case 'Home':e.preventDefault();show(0);break;
+      case 'End':e.preventDefault();show(slides.length-1);break;
+      case 'o':case 'O':toggleOv(true);break;
+      case 't':case 'T':t0=Date.now();tick();break;
+    }
+  });
+
+  var h=parseInt(location.hash.slice(1),10);
+  show(isNaN(h)?0:h-1,true);
+})();
+</script>
+</body>
+</html>
