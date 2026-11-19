@@ -145,6 +145,10 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 .concl .c.hi{background:#e6f8e2;border-color:var(--sage)}
 .concl .c.hi .n{background:var(--sn);color:var(--ink)}
 
+/* icons */
+.i{display:inline-block;width:1em;height:1em;vertical-align:-.14em;flex:none;overflow:visible}
+.ico>.i,.e>.i{display:block}
+
 /* chrome */
 #navprev,#navnext{display:none;position:fixed;bottom:12px;width:52px;height:52px;border:0;border-radius:50%;background:rgba(6,43,65,.55);color:#fff;font-size:34px;line-height:48px;z-index:20;-webkit-tap-highlight-color:transparent}
 #navprev{left:12px}#navnext{right:12px}
@@ -163,6 +167,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 </style>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-speak" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="23" y="6" width="18" height="30" rx="9" fill="#62d84e"/><path d="M14 30a18 18 0 0 0 36 0M32 48v10M22 58h20"/><path d="M28 16h8M28 22h8" stroke-width="2.5"/></g></symbol><symbol id="i-bolt" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M37 4 14 36h15l-4 24 25-34H34z" fill="#f2b134"/></g></symbol><symbol id="i-flask" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M25 6h14M27 6v20L10 52a5 5 0 0 0 4.4 8h35.2a5 5 0 0 0 4.4-8L37 26V6" fill="#fff"/><path d="M18 42h28l7.5 12a4 4 0 0 1-3.5 6H14a4 4 0 0 1-3.5-6z" fill="#62d84e"/><circle cx="26" cy="50" r="2.5" fill="#fff" stroke="none"/><circle cx="36" cy="47" r="2" fill="#fff" stroke="none"/></g></symbol><symbol id="i-chat" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M10 10h44a5 5 0 0 1 5 5v26a5 5 0 0 1-5 5H31l-13 11V46h-8a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5z" fill="#c4f0bc"/><circle cx="22" cy="28" r="2.5" fill="#062b41" stroke="none"/><circle cx="32" cy="28" r="2.5" fill="#062b41" stroke="none"/><circle cx="42" cy="28" r="2.5" fill="#062b41" stroke="none"/></g></symbol><symbol id="i-laptop" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="12" y="10" width="40" height="30" rx="4" fill="#0b3f5e"/><path d="M18 18h12M22 24h18M18 30h10" stroke="#62d84e" stroke-width="3"/><path d="M5 44h54l-4 9a3 3 0 0 1-3 2H12a3 3 0 0 1-3-2z" fill="#a9bccb"/></g></symbol><symbol id="i-image" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="7" y="10" width="50" height="44" rx="6" fill="#d7ebf3"/><circle cx="22" cy="24" r="5" fill="#f2b134"/><path d="M7 46l17-14 12 11 8-7 13 12v2a6 6 0 0 1-6 6H13a6 6 0 0 1-6-6z" fill="#62d84e"/></g></symbol><symbol id="i-bug" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M26 12l-5-6M38 12l5-6M20 30H8M44 30h12M21 40l-11 6M43 40l11 6M22 24l-10-6M42 24l10-6"/><ellipse cx="32" cy="38" rx="13" ry="17" fill="#62d84e"/><circle cx="32" cy="18" r="8" fill="#c4f0bc"/><path d="M32 24v31"/></g></symbol><symbol id="i-crane" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="14" y="14" width="9" height="42" fill="#c4f0bc"/><path d="M14 24l9 8M23 24l-9 8M14 38l9 8M23 38l-9 8" stroke-width="2.5"/><path d="M6 12h52l-6 6H6z" fill="#f2b134"/><path d="M46 18v16"/><rect x="38" y="34" width="16" height="12" rx="2" fill="#d7ebf3"/><rect x="8" y="56" width="26" height="4" rx="2" fill="#062b41"/></g></symbol><symbol id="i-down" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M8 8v46h48"/><path d="M14 18 28 32l8-7 18 20" stroke="#d9534f" stroke-width="5"/><path d="M42 46h12V34" stroke="#d9534f" stroke-width="5"/></g></symbol><symbol id="i-up" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M8 8v46h48"/><path d="M14 44 28 30l8 7 18-20" stroke="#2fae1f" stroke-width="5"/><path d="M42 17h12v12" stroke="#2fae1f" stroke-width="5"/></g></symbol><symbol id="i-bulb" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 5a17 17 0 0 0-9.5 31c2 1.500 3 3.500 3 6.500h13c0-3 1-5 3-6.500A17 17 0 0 0 32 5z" fill="#f2b134"/><path d="M26 49h12M27 55h10"/><path d="M28 36l4-9 4 9" stroke-width="2.500"/></g></symbol><symbol id="i-puzzle" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M10 22h12a6 6 0 1 1 12 0h12v12a6 6 0 1 0 0 12v12H34a6 6 0 1 0-12 0H10V46a6 6 0 1 1 0-12z" fill="#62d84e"/></g></symbol><symbol id="i-globe" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="32" cy="32" r="24" fill="#d7ebf3"/><ellipse cx="32" cy="32" rx="10" ry="24"/><path d="M8 32h48M12 19h40M12 45h40" stroke-width="2.500"/></g></symbol><symbol id="i-phone" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="16" y="4" width="32" height="56" rx="7" fill="#0b3f5e"/><rect x="21" y="11" width="22" height="36" rx="2" fill="#c4f0bc"/><path d="M26 20h12M26 27h12M26 34h7" stroke-width="2.500"/><circle cx="32" cy="54" r="2" fill="#fff" stroke="none"/></g></symbol><symbol id="i-form" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="10" y="6" width="44" height="52" rx="6" fill="#fff"/><rect x="17" y="14" width="7" height="7" rx="1.500" fill="#c4f0bc"/><path d="M29 17.500h17"/><rect x="17" y="27" width="7" height="7" rx="1.500" fill="#c4f0bc"/><path d="M29 30.500h17"/><rect x="17" y="42" width="30" height="9" rx="4.500" fill="#62d84e"/></g></symbol><symbol id="i-chart" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="8" y="34" width="12" height="22" rx="2" fill="#c4f0bc"/><rect x="26" y="20" width="12" height="36" rx="2" fill="#62d84e"/><rect x="44" y="8" width="12" height="48" rx="2" fill="#f2b134"/></g></symbol><symbol id="i-flow" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M20 32h8c8 0 8-16 16-16M28 32c8 0 8 16 16 16"/><circle cx="14" cy="32" r="8" fill="#c4f0bc"/><circle cx="50" cy="16" r="8" fill="#62d84e"/><circle cx="50" cy="48" r="8" fill="#f2b134"/></g></symbol><symbol id="i-rocket" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M20 38l-9 10 11-2zM44 38l9 10-11-2z" fill="#e8a58d"/><path d="M32 4c11 7 15 20 12 36H20C17 24 21 11 32 4z" fill="#fff"/><circle cx="32" cy="24" r="6" fill="#d7ebf3"/><path d="M26 46h12l-6 14z" fill="#f2b134"/></g></symbol><symbol id="i-building" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="12" y="6" width="40" height="52" rx="3" fill="#d7ebf3"/><g fill="#fff" stroke-width="2.500"><rect x="18" y="13" width="8" height="8"/><rect x="38" y="13" width="8" height="8"/><rect x="18" y="27" width="8" height="8"/><rect x="38" y="27" width="8" height="8"/></g><rect x="26" y="44" width="12" height="14" fill="#062b41"/></g></symbol><symbol id="i-brain" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 10C27 3 16 6 16 15 9 16 7 25 13 28 9 33 12 42 18 42c1 7 9 10 14 6z" fill="#c4f0bc"/><path d="M25 22c-3 0-5 2-5 5M24 36c3 0 5-2 5-5" stroke-width="2.500"/><g transform="translate(64 0) scale(-1 1)"><path d="M32 10C27 3 16 6 16 15 9 16 7 25 13 28 9 33 12 42 18 42c1 7 9 10 14 6z" fill="#c4f0bc"/><path d="M25 22c-3 0-5 2-5 5M24 36c3 0 5-2 5-5" stroke-width="2.500"/></g></g></symbol><symbol id="i-box" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 6l22 10v26L32 58 10 42V16z" fill="#f6d58a"/><path d="M10 16l22 10 22-10M32 26v32"/><path d="M21 11l22 10v9" fill="none" stroke-width="2.500"/></g></symbol><symbol id="i-inst" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M5 24 32 8l27 16z" fill="#c4f0bc"/><g fill="#fff"><rect x="12" y="28" width="7" height="22"/><rect x="28.500" y="28" width="7" height="22"/><rect x="45" y="28" width="7" height="22"/></g><rect x="6" y="52" width="52" height="7" rx="2" fill="#d7ebf3"/></g></symbol><symbol id="i-lock" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M20 28V20a12 12 0 0 1 24 0v8"/><rect x="12" y="28" width="40" height="30" rx="6" fill="#f2b134"/><circle cx="32" cy="41" r="4" fill="#062b41" stroke="none"/><path d="M32 43v7"/></g></symbol><symbol id="i-unlock" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M20 28V20a12 12 0 0 1 23.500-3.500"/><rect x="12" y="28" width="40" height="30" rx="6" fill="#f0a29e"/><circle cx="32" cy="41" r="4" fill="#062b41" stroke="none"/><path d="M32 43v7"/></g></symbol><symbol id="i-eye" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M3 32C11 18 21 11 32 11s21 7 29 21c-8 14-18 21-29 21S11 46 3 32z" fill="#fff"/><circle cx="32" cy="32" r="11" fill="#62d84e"/><circle cx="32" cy="32" r="5" fill="#062b41"/><circle cx="35" cy="29" r="2" fill="#fff" stroke="none"/></g></symbol><symbol id="i-buoy" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="32" cy="32" r="24" fill="#fff"/><circle cx="32" cy="32" r="16.500" fill="none" stroke="#d9534f" stroke-width="10" stroke-dasharray="25.900 25.900" stroke-dashoffset="-13"/><circle cx="32" cy="32" r="11.500"/></g></symbol><symbol id="i-headset" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 38V30a20 20 0 0 1 40 0v8"/><rect x="7" y="34" width="12" height="20" rx="5" fill="#62d84e"/><rect x="45" y="34" width="12" height="20" rx="5" fill="#62d84e"/><path d="M51 54c0 6-6 6-14 6"/><circle cx="35" cy="60" r="2.500" fill="#062b41"/></g></symbol><symbol id="i-euro" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="32" cy="32" r="25" fill="#f2b134"/><path d="M42 21a13 13 0 1 0 0 22M17 27h18M17 37h18" stroke-width="4.500"/></g></symbol><symbol id="i-scales" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 10v44M20 56h24M10 16h44"/><circle cx="32" cy="9" r="4" fill="#f2b134"/><path d="M10 16 4 34M10 16l8 18M54 16l-8 18M54 16l6 18" stroke-width="2.500"/><path d="M2 34h20a10 10 0 0 1-20 0zM42 34h20a10 10 0 0 1-20 0z" fill="#c4f0bc"/></g></symbol><symbol id="i-wrench" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><g transform="rotate(45 32 32)"><path d="M17 5h9v11h12V5h9v15a15 15 0 0 1-11 14.4V54a5 5 0 0 1-10 0V34.4A15 15 0 0 1 17 20z" fill="#d7ebf3"/></g></g></symbol><symbol id="i-check" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="32" cy="32" r="25" fill="#62d84e"/><path d="M20 33l9 9 16-18" stroke="#fff" stroke-width="6"/></g></symbol><symbol id="i-id" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="5" y="12" width="54" height="40" rx="7" fill="#fff"/><circle cx="21" cy="28" r="6" fill="#c4f0bc"/><path d="M11 45c0-7 5-10 10-10s10 3 10 10z" fill="#c4f0bc"/><path d="M38 24h14M38 32h14M38 40h9"/></g></symbol><symbol id="i-key" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="19" cy="32" r="13" fill="#f2b134"/><circle cx="19" cy="32" r="4.500" fill="#fff"/><path d="M32 32h26M48 32v9M56 32v7"/></g></symbol><symbol id="i-door" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="14" y="5" width="36" height="54" rx="3" fill="#d9a066"/><rect x="20" y="12" width="24" height="16" rx="2" fill="none" stroke-width="2.500"/><rect x="20" y="34" width="24" height="18" rx="2" fill="none" stroke-width="2.500"/><circle cx="43" cy="32" r="3" fill="#062b41"/></g></symbol><symbol id="i-upload" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M10 38v14a5 5 0 0 0 5 5h34a5 5 0 0 0 5-5V38" fill="#d7ebf3"/><path d="M32 44V8M19 21 32 8l13 13" stroke="#62d84e" stroke-width="7"/><path d="M32 44V8M19 21 32 8l13 13" stroke-width="2.500" opacity="0"/></g></symbol><symbol id="i-burst" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 2l7 17 16-9-8 17 15 6-15 6 6 17-17-8-4 18-4-18-17 8 6-17L2 34l15-6-8-17 16 9z" fill="#f2b134"/><path d="M32 18l4 9 10-2-6 8 6 8-10-2-4 9-4-9-10 2 6-8-6-8 10 2z" fill="#f6d58a" stroke-width="2.500"/></g></symbol><symbol id="i-hammer" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><g transform="rotate(38 32 32)"><rect x="28.500" y="22" width="7" height="38" rx="3.500" fill="#d9a066"/><rect x="10" y="6" width="44" height="18" rx="4" fill="#a9bccb"/><path d="M42 6v18" stroke-width="2.500"/></g></g></symbol><symbol id="i-search" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="26" cy="26" r="17" fill="#d7ebf3"/><path d="M19 22a8 8 0 0 1 8-6" stroke="#fff" stroke-width="3"/><path d="M39 39l18 18" stroke-width="8"/><path d="M39 39l18 18" stroke="#d9a066" stroke-width="3.500"/></g></symbol><symbol id="i-books" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="8" y="14" width="13" height="42" rx="2" fill="#62d84e"/><rect x="23" y="6" width="13" height="50" rx="2" fill="#f2b134"/><rect x="38" y="14" width="13" height="42" rx="2" fill="#c4f0bc"/><path d="M8 22h13M23 16h13M38 22h13M6 59h52" stroke-width="2.500"/><path d="M6 59h52"/></g></symbol><symbol id="i-cap" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M16 34v11c0 6 32 6 32 0V34" fill="#62d84e"/><path d="M32 10 61 25 32 40 3 25z" fill="#0b3f5e"/><path d="M56 28v18" stroke="#f2b134" stroke-width="3.500"/><circle cx="56" cy="48" r="3" fill="#f2b134"/></g></symbol><symbol id="i-cart" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M4 8h9l8 32h30l7-24H17" fill="#c4f0bc"/><circle cx="24" cy="51" r="5" fill="#062b41"/><circle cx="46" cy="51" r="5" fill="#062b41"/><path d="M23 24h30M26 32h24" stroke-width="2.500"/></g></symbol><symbol id="i-shield" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 4l22 8v18c0 15-9 25-22 30C19 55 10 45 10 30V12z" fill="#62d84e"/><path d="M21 31l8 8 15-17" stroke="#fff" stroke-width="5.500"/></g></symbol><symbol id="i-hands" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 57C10 41 5 29 5 20a14 14 0 0 1 27-4 14 14 0 0 1 27 4c0 9-5 21-27 37z" fill="#f0a29e"/><path d="M15 21a7 7 0 0 1 7-7" stroke="#fff" stroke-width="3.500"/></g></symbol><symbol id="i-people" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="44" cy="19" r="8" fill="#62d84e"/><path d="M33 36c3-2 6-3 11-3 9 0 14 6 14 19H42" fill="#62d84e"/><circle cx="23" cy="23" r="9" fill="#c4f0bc"/><path d="M6 56c0-14 7-21 17-21s17 7 17 21z" fill="#c4f0bc"/></g></symbol><symbol id="i-tools" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><g transform="rotate(45 32 32)"><path d="M17 5h9v11h12V5h9v15a15 15 0 0 1-11 14.4V54a5 5 0 0 1-10 0V34.4A15 15 0 0 1 17 20z" fill="#d7ebf3"/></g><g transform="rotate(-45 32 32)"><rect x="28" y="30" width="8" height="26" rx="4" fill="#f2b134"/><path d="M32 30V4" stroke-width="3.500"/></g></g></symbol><symbol id="i-hand" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><g fill="#f6d58a"><rect x="17" y="12" width="8" height="30" rx="4"/><rect x="25" y="5" width="8" height="34" rx="4"/><rect x="33" y="7" width="8" height="32" rx="4"/><rect x="41" y="14" width="8" height="28" rx="4"/><path d="M17 34l-7-7a4 4 0 0 0-6 5l11 19"/><rect x="14" y="30" width="38" height="28" rx="13"/></g><path d="M17 36v-8" stroke="none"/></g></symbol><symbol id="i-doc" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M15 5h23l13 13v37a4 4 0 0 1-4 4H15a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4z" fill="#fff"/><path d="M38 5v13h13" fill="#c4f0bc"/><path d="M19 30h24M19 38h24M19 46h14" stroke-width="3"/></g></symbol><symbol id="i-monitor" viewBox="0 0 64 64"><g stroke="#062b41" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="5" y="7" width="54" height="36" rx="5" fill="#0b3f5e"/><rect x="10" y="12" width="44" height="26" rx="2" fill="#c4f0bc"/><path d="M16 20h14M16 27h22" stroke-width="3"/><path d="M26 43v10M16 56h32"/></g></symbol></svg>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="servicenow-logo" viewBox="0 0 132 20"><path d="M32.022,6.391a5.626,5.626,0,0,0-3.61,1.3V6.523H25.119V19.35h3.425v-8.2a4.073,4.073,0,0,1,3.109-1.588,3.494,3.494,0,0,1,1.374.206V6.479a5.851,5.851,0,0,0-1.005-.088" fill="#000000" fill-rule="evenodd"/><path d="M2.16,15.436a5.369,5.369,0,0,0,3.5,1.269c.922,0,1.633-.45,1.633-1.084,0-1.931-6.191-1.243-6.191-5.369,0-2.459,2.371-3.993,4.9-3.993a7.9,7.9,0,0,1,4.32,1.3L8.72,10.04a4.3,4.3,0,0,0-2.45-.872c-.948,0-1.739.37-1.739,1.031,0,1.666,6.192,1.005,6.192,5.448,0,2.46-2.4,3.967-5.085,3.967A8.815,8.815,0,0,1,.5,17.9Z" fill="#000000" fill-rule="evenodd"/><path d="M23.657,12.817c0-3.57-2.5-6.558-6.034-6.558-3.794,0-6.218,3.12-6.218,6.691A6.4,6.4,0,0,0,18.1,19.614a6.919,6.919,0,0,0,5.243-2.3l-1.95-1.957a4.515,4.515,0,0,1-3.214,1.481A3.36,3.36,0,0,1,14.725,13.8h8.853A5.735,5.735,0,0,0,23.657,12.817Zm-8.774-1.533a2.775,2.775,0,0,1,2.74-2.248,2.552,2.552,0,0,1,2.53,2.248Z" fill="#000000" fill-rule="evenodd"/><polygon points="41.19 14.351 44.694 6.523 48.252 6.523 42.376 19.35 40.005 19.35 34.129 6.523 37.686 6.523 41.19 14.351" fill="#000000" fill-rule="evenodd"/><path d="M51.128.5A2.2,2.2,0,1,1,48.888,2.7,2.2,2.2,0,0,1,51.128.5" fill="#000000" fill-rule="evenodd"/><rect x="49.415" y="6.523" width="3.425" height="12.827" fill="#000000"/><path d="M67,16.731a6.766,6.766,0,0,1-5.8,2.883,6.68,6.68,0,1,1,.026-13.355,6.808,6.808,0,0,1,5.375,2.565l-2.424,2.142a3.7,3.7,0,0,0-2.951-1.534A3.433,3.433,0,0,0,57.78,12.95a3.383,3.383,0,0,0,3.531,3.49,3.741,3.741,0,0,0,3.056-1.692Z" fill="#000000" fill-rule="evenodd"/><path d="M79.442,17.313a6.918,6.918,0,0,1-5.243,2.3,6.4,6.4,0,0,1-6.692-6.664c0-3.571,2.424-6.691,6.218-6.691,3.53,0,6.033,2.988,6.033,6.558a5.635,5.635,0,0,1-.079.979H70.826a3.36,3.36,0,0,0,3.452,3.041,4.52,4.52,0,0,0,3.215-1.481Zm-3.188-6.029a2.551,2.551,0,0,0-2.529-2.248,2.774,2.774,0,0,0-2.74,2.248Z" fill="#000000" fill-rule="evenodd"/><path d="M81.12,19.35V6.523h3.293V7.554a5.625,5.625,0,0,1,3.609-1.295,5.747,5.747,0,0,1,4.427,2.063,6.482,6.482,0,0,1,1.317,4.5V19.35H90.341v-6.8a3.11,3.11,0,0,0-.764-2.407,2.69,2.69,0,0,0-1.923-.714,4.076,4.076,0,0,0-3.109,1.587V19.35Z" fill="#000000" fill-rule="evenodd"/><path d="M102.586,6.259A7.5,7.5,0,0,0,97.419,19.21a1.481,1.481,0,0,0,1.926.1,5.355,5.355,0,0,1,6.394,0,1.485,1.485,0,0,0,1.937-.113,7.5,7.5,0,0,0-5.09-12.94M102.542,17.5a3.637,3.637,0,0,1-3.734-3.733,3.734,3.734,0,1,1,7.468,0,3.637,3.637,0,0,1-3.734,3.733" fill="#62d84e" fill-rule="evenodd"/><polygon points="116.788 19.35 114.237 19.35 109.15 6.523 112.57 6.523 115.359 13.853 118.094 6.523 120.952 6.523 123.662 13.853 126.475 6.523 129.896 6.523 124.809 19.35 122.258 19.35 119.523 12.046 116.788 19.35" fill="#000000" fill-rule="evenodd"/><path d="M129.935,17.9h-.289v.543H129.4V16.957h.6a.476.476,0,0,1,.478.478.469.469,0,0,1-.295.432l.338.579h-.268Zm-.289-.219H130a.249.249,0,0,0,0-.5h-.351Z" fill="#000000"/><path d="M129.9,16.348a1.379,1.379,0,1,1-1.378,1.379,1.381,1.381,0,0,1,1.378-1.379m0-.218a1.6,1.6,0,1,0,1.6,1.6,1.6,1.6,0,0,0-1.6-1.6Z" fill="#000000"/></symbol></svg>
 <div id="stage">
 
@@ -178,11 +183,72 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
       <div class="pop" style="margin-top:34px"><svg class="logo" viewBox="0 0 132 20" role="img" aria-label="ServiceNow"><use href="#servicenow-logo"/></svg></div>
     </div>
     <div class="col mid pop" style="flex:.8">
-      <div style="position:relative;width:520px;height:460px">
-        <div style="font-size:380px;line-height:1;position:absolute;left:50px;top:40px">💻</div>
-        <div style="font-size:150px;line-height:1;position:absolute;left:0;top:0">✨</div>
-        <div style="font-size:170px;line-height:1;position:absolute;right:0;bottom:0">🚧</div>
-      </div>
+      <svg viewBox="0 0 520 460" width="520" height="460" role="img" aria-label="Laptop met AI-sprankels en een waarschuwingshek" style="overflow:visible">
+        <defs>
+          <linearGradient id="hScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b3f5e"/><stop offset="1" stop-color="#062b41"/></linearGradient>
+          <linearGradient id="hBase" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3dfe7"/><stop offset="1" stop-color="#a9bccb"/></linearGradient>
+          <radialGradient id="hGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#62d84e" stop-opacity=".35"/><stop offset="1" stop-color="#62d84e" stop-opacity="0"/></radialGradient>
+          <pattern id="hHazard" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="44" height="44" fill="#fff"/><rect width="22" height="44" fill="#c8693b"/></pattern>
+          <clipPath id="hScr"><rect x="104" y="82" width="292" height="190" rx="10"/></clipPath>
+          <path id="hStar" d="M0-1 C.08-.35 .35-.08 1 0 C.35.08 .08.35 0 1 C-.08.35 -.35.08 -1 0 C-.35-.08 -.08-.35 0-1Z"/>
+        </defs>
+        <style>
+          .tw{transform-box:fill-box;transform-origin:center;animation:tw 2.8s ease-in-out infinite}
+          .tw.b{animation-delay:.9s}.tw.c{animation-delay:1.7s}
+          @keyframes tw{0%,100%{transform:scale(.75) rotate(0);opacity:.75}50%{transform:scale(1.1) rotate(18deg);opacity:1}}
+          .cur{animation:blink 1.1s steps(1) infinite}
+          @keyframes blink{50%{opacity:0}}
+          .flt{animation:flt 5s ease-in-out infinite}
+          @keyframes flt{50%{transform:translateY(-8px)}}
+          .lamp{animation:lamp 1.6s ease-in-out infinite}
+          @keyframes lamp{50%{opacity:.35}}
+        </style>
+
+        <ellipse cx="260" cy="420" rx="240" ry="22" fill="#062b41" opacity=".12"/>
+        <circle cx="250" cy="190" r="230" fill="url(#hGlow)"/>
+
+        <!-- laptop -->
+        <g class="flt">
+          <rect x="92" y="70" width="316" height="232" rx="20" fill="#062b41"/>
+          <rect x="104" y="82" width="292" height="190" rx="10" fill="url(#hScreen)"/>
+          <g clip-path="url(#hScr)">
+            <circle cx="122" cy="98" r="5" fill="#d9534f"/><circle cx="138" cy="98" r="5" fill="#f2b134"/><circle cx="154" cy="98" r="5" fill="#62d84e"/>
+            <rect x="104" y="112" width="292" height="1.5" fill="#fff" opacity=".1"/>
+            <g stroke-linecap="round" stroke-width="10" fill="none">
+              <path d="M126 134h54" stroke="#62d84e"/><path d="M190 134h78" stroke="#8fd0e6"/>
+              <path d="M146 158h92" stroke="#8fd0e6"/><path d="M248 158h46" stroke="#f2b134"/>
+              <path d="M146 182h40" stroke="#c4f0bc"/><path d="M196 182h86" stroke="#e8f3fa" opacity=".8"/>
+              <path d="M146 206h70" stroke="#e8f3fa" opacity=".8"/><path d="M226 206h34" stroke="#62d84e"/>
+              <path d="M126 230h32" stroke="#62d84e"/>
+            </g>
+            <rect class="cur" x="170" y="222" width="8" height="18" rx="2" fill="#62d84e"/>
+          </g>
+          <path d="M104 82h292v28L104 190z" fill="#fff" opacity=".04"/>
+          <!-- base -->
+          <path d="M60 296h380l18 30c3 6-1 12-8 12H50c-7 0-11-6-8-12z" fill="url(#hBase)"/>
+          <path d="M60 296h380l4 7H56z" fill="#fff" opacity=".5"/>
+          <rect x="212" y="296" width="76" height="9" rx="4.5" fill="#8ea4b4"/>
+        </g>
+
+        <!-- sparkles (AI) -->
+        <g fill="#62d84e">
+          <g transform="translate(66 78) scale(56)"><use href="#hStar" class="tw"/></g>
+          <g transform="translate(132 30) scale(26)"><use href="#hStar" class="tw b" fill="#c4f0bc"/></g>
+          <g transform="translate(30 168) scale(20)"><use href="#hStar" class="tw c"/></g>
+          <g transform="translate(446 120) scale(18)"><use href="#hStar" class="tw b" fill="#c4f0bc"/></g>
+        </g>
+
+        <!-- construction barrier (risk) -->
+        <g>
+          <path d="M352 392l-14 30M472 392l14 30" stroke="#062b41" stroke-width="9" stroke-linecap="round"/>
+          <path d="M366 372l-6 20M458 372l6 20" stroke="#062b41" stroke-width="9" stroke-linecap="round"/>
+          <rect x="332" y="330" width="176" height="52" rx="12" fill="url(#hHazard)" stroke="#062b41" stroke-width="6"/>
+          <rect x="332" y="330" width="176" height="14" rx="8" fill="#fff" opacity=".22"/>
+          <g class="lamp"><circle cx="420" cy="312" r="22" fill="#f2b134" opacity=".28"/></g>
+          <rect x="406" y="306" width="28" height="24" rx="8" fill="#f2b134" stroke="#062b41" stroke-width="5"/>
+          <path d="M420 296v-6M408 300l-5-5M432 300l5-5" stroke="#f2b134" stroke-width="4" stroke-linecap="round" class="lamp"/>
+        </g>
+      </svg>
     </div>
   </div>
   <div class="corner">In samenwerking met Alex Hendrikse</div>
@@ -193,10 +259,10 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
   <div class="kicker">2 · Wat is vibe coding?</div>
   <h2>Software maken door het te <span class="hl">beschrijven</span></h2>
   <div class="loop" style="margin-top:70px;display:grid;grid-template-columns:370px auto 370px auto 370px auto 370px;column-gap:26px;justify-content:center;align-items:stretch">
-    <div class="card pop"><div class="ico">🗣️</div><div class="t">Beschrijf</div><div class="d">“Bouw een app die…”</div></div><div class="arrow" style="align-self:center">→</div>
-    <div class="card pop"><div class="ico">⚡</div><div class="t">Genereer</div><div class="d">AI schrijft de code in een paar seconden</div></div><div class="arrow" style="align-self:center">→</div>
-    <div class="card pop"><div class="ico">🧪</div><div class="t">Probeer</div><div class="d">Je klikt erdoor: werkt het zoals bedoeld?</div></div><div class="arrow" style="align-self:center">→</div>
-    <div class="card pop"><div class="ico">💬</div><div class="t">Feedback</div><div class="d">“Maak de knop groter en voeg een filter toe”</div></div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-speak"/></svg></div><div class="t">Beschrijf</div><div class="d">“Bouw een app die…”</div></div><div class="arrow" style="align-self:center">→</div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg></div><div class="t">Genereer</div><div class="d">AI schrijft de code in een paar seconden</div></div><div class="arrow" style="align-self:center">→</div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-flask"/></svg></div><div class="t">Probeer</div><div class="d">Je klikt erdoor: werkt het zoals bedoeld?</div></div><div class="arrow" style="align-self:center">→</div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></div><div class="t">Feedback</div><div class="d">“Maak de knop groter en voeg een filter toe”</div></div>
   </div>
   <div style="display:grid;grid-template-columns:370px auto 370px auto 370px auto 370px;column-gap:26px;justify-content:center">
     <div class="pop" style="grid-column:3/8;margin:0 185px;height:90px;border:6px dashed var(--green);border-top:none;border-radius:0 0 50px 50px;position:relative;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:var(--green)">
@@ -212,13 +278,13 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
   <div class="kicker">3 · Waarom kan dit nu?</div>
   <h2>AI <span class="hl">begrijpt</span> nu…</h2>
   <div class="row grow" style="margin-top:50px;align-items:center">
-    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">💬</div><div class="t">Taal</div></div>
-    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">💻</div><div class="t">Code</div></div>
-    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">🖼️</div><div class="t">Screenshots &amp; ontwerpen</div></div>
-    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">🐛</div><div class="t">Foutmeldingen &amp; logs</div></div>
-    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px">🏗️</div><div class="t">Bestaande software</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></div><div class="t">Taal</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px"><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg></div><div class="t">Code</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg></div><div class="t">Screenshots &amp; ontwerpen</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px"><svg class="i" aria-hidden="true"><use href="#i-bug"/></svg></div><div class="t">Foutmeldingen &amp; logs</div></div>
+    <div class="card pop" style="flex:1;text-align:center;padding:50px 20px"><div class="ico" style="font-size:150px"><svg class="i" aria-hidden="true"><use href="#i-crane"/></svg></div><div class="t">Bestaande software</div></div>
   </div>
-  <div class="small" style="text-align:center">Kosten en tijd van een prototype: dalen snel 📉</div>
+  <div class="small" style="text-align:center">Kosten en tijd van een prototype: dalen snel <svg class="i" aria-hidden="true"><use href="#i-down"/></svg></div>
   <div class="callout">Een werkende demo <b>≠</b> een veilig, onderhoudbaar product</div>
 </section>
 
@@ -231,7 +297,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
     <div class="arrow" style="font-size:120px">→</div>
     <div class="card pop" style="flex:1.2;text-align:center;padding:60px 30px;background:#e6f8e2;border-color:var(--sage)"><div style="font-size:64px;font-weight:800;line-height:1.15">Moeten we het bouwen, en kunnen we er <span class="hl">verantwoordelijkheid</span> voor nemen?</div></div>
   </div>
-  <div class="small" style="text-align:center;font-size:46px;font-weight:800;color:var(--ink);margin-bottom:40px">Wie het idee heeft, kan het nu ook zelf bouwen 💡→🧩</div>
+  <div class="small" style="text-align:center;font-size:46px;font-weight:800;color:var(--ink);margin-bottom:40px">Wie het idee heeft, kan het nu ook zelf bouwen <svg class="i" aria-hidden="true"><use href="#i-bulb"/></svg>→<svg class="i" aria-hidden="true"><use href="#i-puzzle"/></svg></div>
   <div class="callout">AI democratiseert het bouwen, <b>en de verantwoordelijkheid</b></div>
 </section>
 
@@ -240,14 +306,14 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
   <div class="kicker">5 · Wat kun je ermee?</div>
   <h2>Van simpel naar <span class="hl">serieus</span></h2>
   <div class="stairs">
-    <div class="step" style="height:38%;background:#e6f8e2"><div class="ico">🌐</div>Landings&shy;pagina<small>groepskorting</small></div>
-    <div class="step" style="height:46%;background:#d3f1cc"><div class="ico">📱</div>Klikbaar prototype<small>goede-voornemens-app</small></div>
-    <div class="step" style="height:54%;background:#c0ebb8"><div class="ico">📝</div>Formulier</div>
-    <div class="step" style="height:62%;background:#aee4a4"><div class="ico">📊</div>Dashboard<small>batterij&shy;container</small></div>
-    <div class="step" style="height:70%;background:#9bdb90"><div class="ico">🔀</div>Workflow</div>
-    <div class="step" style="height:78%;background:#88d27c"><div class="ico">🚀</div>MVP</div>
-    <div class="step" style="height:88%;background:#76ca69"><div class="ico">🏢</div>Interne app</div>
-    <div class="step" style="height:98%;background:#62d84e"><div class="ico">🧠</div>Externe app<small>met intelligente workflows</small></div>
+    <div class="step" style="height:38%;background:#e6f8e2"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg></div>Landings&shy;pagina<small>groepskorting</small></div>
+    <div class="step" style="height:46%;background:#d3f1cc"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></div>Klikbaar prototype<small>goede-voornemens-app</small></div>
+    <div class="step" style="height:54%;background:#c0ebb8"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-form"/></svg></div>Formulier</div>
+    <div class="step" style="height:62%;background:#aee4a4"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg></div>Dashboard<small>batterij&shy;container</small></div>
+    <div class="step" style="height:70%;background:#9bdb90"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-flow"/></svg></div>Workflow</div>
+    <div class="step" style="height:78%;background:#88d27c"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-rocket"/></svg></div>MVP</div>
+    <div class="step" style="height:88%;background:#76ca69"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-building"/></svg></div>Interne app</div>
+    <div class="step" style="height:98%;background:#62d84e"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-brain"/></svg></div>Externe app<small>met intelligente workflows</small></div>
   </div>
 </section>
 
@@ -262,20 +328,20 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
   <h2>Hoe <span class="hl">serieus</span> wordt het?</h2>
   <div class="row grow" style="margin-top:20px;gap:60px;align-items:stretch;min-height:0">
     <div class="ladder">
-      <div class="rung pop" style="margin-left:0;background:#e6f8e2"><span class="ico">🧪</span><div>Experiment<small>alleen jij, fictieve data</small></div></div>
-      <div class="rung pop" style="margin-left:50px;background:#d3f1cc"><span class="ico">🧩</span><div>Prototype<small>testen met potentiële gebruikers</small></div></div>
-      <div class="rung pop" style="margin-left:100px;background:#c0ebb8"><span class="ico">🚀</span><div>MVP<small>echte gebruikers, misschien echte data</small></div></div>
-      <div class="rung pop" style="margin-left:150px;background:#aee4a4"><span class="ico">📦</span><div>Product<small>klanten zijn ervan afhankelijk</small></div></div>
-      <div class="rung pop" style="margin-left:200px;background:#9bdb90"><span class="ico">🏛️</span><div>Bedrijfskritisch<small>uitval heeft ernstige gevolgen</small></div></div>
+      <div class="rung pop" style="margin-left:0;background:#e6f8e2"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-flask"/></svg></span><div>Experiment<small>alleen jij, fictieve data</small></div></div>
+      <div class="rung pop" style="margin-left:50px;background:#d3f1cc"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-puzzle"/></svg></span><div>Prototype<small>testen met potentiële gebruikers</small></div></div>
+      <div class="rung pop" style="margin-left:100px;background:#c0ebb8"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-rocket"/></svg></span><div>MVP<small>echte gebruikers, misschien echte data</small></div></div>
+      <div class="rung pop" style="margin-left:150px;background:#aee4a4"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg></span><div>Product<small>klanten zijn ervan afhankelijk</small></div></div>
+      <div class="rung pop" style="margin-left:200px;background:#9bdb90"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-inst"/></svg></span><div>Bedrijfskritisch<small>uitval heeft ernstige gevolgen</small></div></div>
     </div>
     <div class="col" style="flex:.55;gap:16px;justify-content:center">
       <div class="small" style="font-weight:800;font-size:34px">Eisen nemen toe ↗</div>
-      <div><span class="pill">🔒 beveiliging</span></div>
-      <div><span class="pill alt">🕵️ privacy</span></div>
-      <div><span class="pill">🛟 betrouwbaarheid</span></div>
-      <div><span class="pill alt">🎧 support</span></div>
-      <div><span class="pill">💶 kosten</span></div>
-      <div><span class="pill alt">⚖️ wetgeving</span></div>
+      <div><span class="pill"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg> beveiliging</span></div>
+      <div><span class="pill alt"><svg class="i" aria-hidden="true"><use href="#i-eye"/></svg> privacy</span></div>
+      <div><span class="pill"><svg class="i" aria-hidden="true"><use href="#i-buoy"/></svg> betrouwbaarheid</span></div>
+      <div><span class="pill alt"><svg class="i" aria-hidden="true"><use href="#i-headset"/></svg> support</span></div>
+      <div><span class="pill"><svg class="i" aria-hidden="true"><use href="#i-euro"/></svg> kosten</span></div>
+      <div><span class="pill alt"><svg class="i" aria-hidden="true"><use href="#i-scales"/></svg> wetgeving</span></div>
     </div>
   </div>
   <div class="callout" style="margin-top:24px;font-size:42px">MVP = <b>minimum viable</b> product, niet <b>minimum responsible</b> product</div>
@@ -286,14 +352,14 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
   <div class="kicker">8 · Risico’s, oplopend in ernst</div>
   <h2>Drie niveaus van <span class="hl">oeps</span></h2>
   <div class="row grow" style="align-items:flex-end;gap:30px;margin-top:30px">
-    <div class="risk pop" style="height:50%;flex:.8"><div class="bar" style="background:#f3e3b8;flex:1"><div class="stamp">werkt op mijn laptop ✅</div><div class="ico">🔧</div><div class="t">Persoonlijk<br><span style="font-weight:600;font-size:34px">Het gaat stuk en je verliest de controle</span></div></div></div>
+    <div class="risk pop" style="height:50%;flex:.8"><div class="bar" style="background:#f3e3b8;flex:1"><div class="stamp">werkt op mijn laptop <svg class="i" aria-hidden="true"><use href="#i-check"/></svg></div><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-wrench"/></svg></div><div class="t">Persoonlijk<br><span style="font-weight:600;font-size:34px">Het gaat stuk en je verliest de controle</span></div></div></div>
     <div class="risk pop" style="height:80%;flex:1.5"><div class="bar" style="background:#efc9a4;flex:1;padding:26px 30px">
-      <div class="ico" style="font-size:80px">🔓</div>
+      <div class="ico" style="font-size:80px"><svg class="i" aria-hidden="true"><use href="#i-unlock"/></svg></div>
       <div class="t" style="font-size:44px">Team &amp; organisatie<br><span style="font-weight:600;font-size:34px">Data en beveiliging</span></div>
-      <div style="text-align:left;font-size:30px;font-weight:700;line-height:1.35;margin-top:14px">🪪 Persoonsgegevens in een app<br>🔑 API-sleutels in de code<br>🚪 Authenticatie ≠ autorisatie<br>📤 Data naar een AI-aanbieder</div>
-      <div class="pills" style="justify-content:center;margin-top:14px"><span class="pill alt">🇳🇱 AVG (GDPR)</span><span class="pill alt">Dataminimalisatie</span><span class="pill alt">Doelbinding</span></div>
+      <div style="text-align:left;font-size:30px;font-weight:700;line-height:1.35;margin-top:14px"><svg class="i" aria-hidden="true"><use href="#i-id"/></svg> Persoonsgegevens in een app<br><svg class="i" aria-hidden="true"><use href="#i-key"/></svg> API-sleutels in de code<br><svg class="i" aria-hidden="true"><use href="#i-door"/></svg> Authenticatie ≠ autorisatie<br><svg class="i" aria-hidden="true"><use href="#i-upload"/></svg> Data naar een AI-aanbieder</div>
+      <div class="pills" style="justify-content:center;margin-top:14px"><span class="pill alt"><svg class="i" viewBox="0 0 9 6" aria-hidden="true" style="width:1.3em;height:.87em;vertical-align:-.1em;border-radius:3px"><rect width="9" height="2" fill="#ae1c28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468b"/></svg> AVG (GDPR)</span><span class="pill alt">Dataminimalisatie</span><span class="pill alt">Doelbinding</span></div>
     </div></div>
-    <div class="risk pop" style="height:98%;flex:.9"><div class="bar" style="background:#e8a58d;flex:1"><div class="ico">💥</div><div class="t">Klanten<br><span style="font-weight:600;font-size:34px">Zij zijn ervan afhankelijk</span></div></div></div>
+    <div class="risk pop" style="height:98%;flex:.9"><div class="bar" style="background:#e8a58d;flex:1"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-burst"/></svg></div><div class="t">Klanten<br><span style="font-weight:600;font-size:34px">Zij zijn ervan afhankelijk</span></div></div></div>
   </div>
 </section>
 
@@ -302,12 +368,12 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
   <div class="kicker">9 · AI is niet alleen de bouwer</div>
   <h2>AI draagt <span class="hl">veel petten</span></h2>
   <div class="hats grow">
-    <div class="card pop"><div class="ico">🔨</div><div><div class="t">Bouwen</div><div class="d">code, interface, data</div></div></div>
-    <div class="card pop"><div class="ico">🔍</div><div><div class="t">Reviewen</div><div class="d">risico’s en kwetsbaarheden</div></div></div>
-    <div class="card pop"><div class="ico">💡</div><div><div class="t">Brainstormen</div><div class="d">ideeën en scenario’s</div></div></div>
-    <div class="card pop"><div class="ico">📚</div><div><div class="t">Onderzoeken</div><div class="d">markt, concurrenten, regels</div></div></div>
-    <div class="card pop"><div class="ico">🎓</div><div><div class="t">Leren</div><div class="d">laat code en begrippen uitleggen</div></div></div>
-    <div class="card pop"><div class="ico">🧪</div><div><div class="t">Testen</div><div class="d">testcases en randgevallen</div></div></div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-hammer"/></svg></div><div><div class="t">Bouwen</div><div class="d">code, interface, data</div></div></div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></div><div><div class="t">Reviewen</div><div class="d">risico’s en kwetsbaarheden</div></div></div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-bulb"/></svg></div><div><div class="t">Brainstormen</div><div class="d">ideeën en scenario’s</div></div></div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-books"/></svg></div><div><div class="t">Onderzoeken</div><div class="d">markt, concurrenten, regels</div></div></div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg></div><div><div class="t">Leren</div><div class="d">laat code en begrippen uitleggen</div></div></div>
+    <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-flask"/></svg></div><div><div class="t">Testen</div><div class="d">testcases en randgevallen</div></div></div>
   </div>
   <div class="callout">Gebruik AI om <b>kritischer te denken</b>, niet alleen om sneller te bouwen</div>
 </section>
@@ -317,10 +383,10 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
   <div class="kicker">10 · Bouwen, kopen of configureren?</div>
   <h2>Drie wegen naar <span class="hl">je doel</span></h2>
   <div class="row grow" style="margin-top:34px;gap:34px;align-items:stretch;min-height:0">
-    <div class="card pop" style="flex:1"><div class="ico">🔨</div><div class="t">Bouwen</div><div class="d">Echt onderscheidend, een klein beheersbaar experiment, en je hebt de tijd om het te onderhouden.</div></div>
-    <div class="card pop" style="flex:1"><div class="ico">🛒</div><div class="t">Kopen</div><div class="d">Standaardprobleem. Het wiel is al tientallen keren uitgevonden.</div>
+    <div class="card pop" style="flex:1"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-hammer"/></svg></div><div class="t">Bouwen</div><div class="d">Echt onderscheidend, een klein beheersbaar experiment, en je hebt de tijd om het te onderhouden.</div></div>
+    <div class="card pop" style="flex:1"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-cart"/></svg></div><div class="t">Kopen</div><div class="d">Standaardprobleem. Het wiel is al tientallen keren uitgevonden.</div>
       <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:10px"><span class="pill line" style="font-size:28px">Shopify</span><span class="pill line" style="font-size:28px">Mollie</span><span class="pill line" style="font-size:28px">Stripe</span><span class="pill line" style="font-size:28px">HubSpot</span></div></div>
-    <div class="card pop" style="flex:1"><div class="ico">🧩</div><div class="t">Configureren</div><div class="d">Gebruik een platform en voeg je eigen proces en ervaring toe. Beveiliging en rechten zitten er al in.</div></div>
+    <div class="card pop" style="flex:1"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-puzzle"/></svg></div><div class="t">Configureren</div><div class="d">Gebruik een platform en voeg je eigen proces en ervaring toe. Beveiliging en rechten zitten er al in.</div></div>
   </div>
   <div class="callout" style="margin-top:30px;font-size:40px">Een platform neemt de verantwoordelijkheid niet weg. Het geeft je <b>betere bouwstenen en vangrails.</b></div>
 </section>
@@ -334,7 +400,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
       <div class="pills"><span class="pill line">persoonsgegevens</span><span class="pill line">autorisatie</span><span class="pill line">geheimen</span><span class="pill line">foutafhandeling</span><span class="pill line">logging</span><span class="pill line">menselijk toezicht</span></div>
     </div>
   </div>
-  <div class="value" style="font-size:42px"><span class="e">🛡️</span><span>Een beheerd platform geeft betere bouwstenen. Vind de risico’s voordat je gebruikers dat doen.</span></div>
+  <div class="value" style="font-size:42px"><span class="e"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span><span>Een beheerd platform geeft betere bouwstenen. Vind de risico’s voordat je gebruikers dat doen.</span></div>
 </section>
 
 <!-- 12 Copy + edge -->
@@ -345,12 +411,12 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
     <div class="col" style="flex:1;justify-content:center;gap:14px">
       <div class="small" style="font-weight:800;color:var(--green);font-size:30px">Wat is moeilijk te kopiëren?</div>
       <div class="edge">
-        <div class="card pop"><div class="ico">🤝</div><div><div class="t">Klanten &amp; vertrouwen</div><div class="d">Inzicht, toegang, distributie</div></div></div>
-        <div class="card pop"><div class="ico">👥</div><div><div class="t">Community</div><div class="d">Gebruikers en partners</div></div></div>
-        <div class="card pop"><div class="ico">📊</div><div><div class="t">Data</div><div class="d">Over tijd opgebouwd</div></div></div>
-        <div class="card pop"><div class="ico">📦</div><div><div class="t">Hardware &amp; contracten</div><div class="d">Netaansluiting, vergunningen</div></div></div>
-        <div class="card pop"><div class="ico">🛠️</div><div><div class="t">Service &amp; betrouwbaarheid</div><div class="d">Blijft werken, neemt verantwoordelijkheid</div></div></div>
-        <div class="card pop"><div class="ico">📈</div><div><div class="t">Leersnelheid</div><div class="d">Sneller leren dan anderen</div></div></div>
+        <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-hands"/></svg></div><div><div class="t">Klanten &amp; vertrouwen</div><div class="d">Inzicht, toegang, distributie</div></div></div>
+        <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-people"/></svg></div><div><div class="t">Community</div><div class="d">Gebruikers en partners</div></div></div>
+        <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg></div><div><div class="t">Data</div><div class="d">Over tijd opgebouwd</div></div></div>
+        <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg></div><div><div class="t">Hardware &amp; contracten</div><div class="d">Netaansluiting, vergunningen</div></div></div>
+        <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-tools"/></svg></div><div><div class="t">Service &amp; betrouwbaarheid</div><div class="d">Blijft werken, neemt verantwoordelijkheid</div></div></div>
+        <div class="card pop"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-up"/></svg></div><div><div class="t">Leersnelheid</div><div class="d">Sneller leren dan anderen</div></div></div>
       </div>
     </div>
   </div>
@@ -373,7 +439,7 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
 <section class="slide open" data-title="Q&amp;A">
   <div class="row grow" style="align-items:center;gap:80px">
     <div class="col" style="flex:1.4">
-      <h1 style="font-size:170px">Q&amp;A 🙋</h1>
+      <h1 style="font-size:170px">Q&amp;A</h1>
       <div class="sub" style="font-weight:800;color:var(--ink);font-size:56px;margin-top:30px">Eric Rietveld</div>
       <div class="sub" style="font-size:44px;margin-top:6px">linkedin.com/in/aieric</div>
       <div class="sub" style="font-weight:800;color:var(--ink);font-size:56px;margin-top:56px">Alex Hendrikse</div>
@@ -381,9 +447,135 @@ h2{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.015em}
     </div>
     <div class="col mid" style="flex:.6;gap:20px">
       <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 29 29" shape-rendering="crispEdges"><path stroke="#062b41" d="M4 4.5h7m2 0h5m2 0h1m1 0h2m2 0h7M4 5.5h1m5 0h1m1 0h2m1 0h2m1 0h7m1 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m2 0h1m2 0h4m2 0h1m3 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m4 0h1m2 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m2 0h1m1 0h3m3 0h3m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M13 11.5h3m1 0h2m1 0h2M4 12.5h1m1 0h1m1 0h1m1 0h1m4 0h2m1 0h4m6 0h1m2 0h1M5 13.5h3m6 0h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1m2 0h1M8 14.5h5m4 0h1m3 0h1m3 0h2m1 0h1m1 0h3M4 15.5h1m1 0h1m1 0h2m3 0h1m2 0h1m2 0h3m1 0h2m2 0h2m2 0h1M4 16.5h3m1 0h4m1 0h3m3 0h3m2 0h3m2 0h1m1 0h2M4 17.5h1m1 0h2m4 0h2m1 0h1m1 0h1m2 0h2m2 0h3m2 0h1m2 0h1M5 18.5h12m1 0h1m7 0h1m1 0h2m1 0h2M5 19.5h5m1 0h3m3 0h3m1 0h2m1 0h3m2 0h1m1 0h1M5 20.5h1m4 0h1m1 0h3m3 0h1m1 0h2m1 0h2m1 0h2m1 0h1m1 0h2M7 21.5h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h1m4 0h2m2 0h2m1 0h1M4 22.5h1m3 0h1m1 0h1m1 0h2m1 0h3m2 0h1m4 0h1m1 0h2m2 0h2M5 23.5h1m3 0h1m1 0h1m7 0h3m1 0h7m1 0h1M4 24.5h1m1 0h1m3 0h1m1 0h1m1 0h2m4 0h2m1 0h6M12 25.5h2m2 0h2m2 0h2m1 0h2m3 0h1m1 0h3M4 26.5h7m4 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h2m1 0h2M4 27.5h1m5 0h1m3 0h2m1 0h2m2 0h1m2 0h1m3 0h2m1 0h2M4 28.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m2 0h2m1 0h5m3 0h1M4 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h3m3 0h1m2 0h2m1 0h3M4 30.5h1m1 0h3m1 0h1m1 0h3m1 0h3m1 0h2m1 0h1m3 0h3m2 0h1M4 31.5h1m5 0h1m2 0h2m2 0h3m1 0h5m2 0h1m2 0h1M4 32.5h7m1 0h1m2 0h1m1 0h4m2 0h3m1 0h2m2 0h2"/></svg></div>
-      <div class="qrcap"><b>Scan voor de materialen</b><ul><li>📄 Volledige inhoud van de talk</li><li>🛡️ Beveiligings-prompt voor je eigen project</li><li>🖥️ Deze presentatie</li></ul></div>
+      <div class="qrcap"><b>Scan voor de materialen</b><ul><li><svg class="i" aria-hidden="true"><use href="#i-doc"/></svg> Volledige inhoud van de talk</li><li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg> Beveiligings-prompt voor je eigen project</li><li><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg> Deze presentatie</li></ul></div>
     </div>
   </div>
+  <svg viewBox="0 0 560 620" role="img" aria-label="Student steekt de hand op tijdens het vibecoden" style="position:absolute;left:700px;top:150px;width:580px;height:640px;overflow:visible">
+    <defs>
+      <radialGradient id="qGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#62d84e" stop-opacity=".32"/><stop offset=".6" stop-color="#62d84e" stop-opacity=".1"/><stop offset="1" stop-color="#62d84e" stop-opacity="0"/></radialGradient>
+      <linearGradient id="qHood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fe05b"/><stop offset="1" stop-color="#4cc23a"/></linearGradient>
+      <linearGradient id="qSleeve" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5bd247"/><stop offset="1" stop-color="#6fe05b"/></linearGradient>
+      <linearGradient id="qLid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11506f"/><stop offset="1" stop-color="#062b41"/></linearGradient>
+      <linearGradient id="qBase" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3dfe7"/><stop offset="1" stop-color="#a9bccb"/></linearGradient>
+      <linearGradient id="qDesk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6b47e"/><stop offset="1" stop-color="#cf9459"/></linearGradient>
+      <radialGradient id="qLogo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#62d84e" stop-opacity=".55"/><stop offset="1" stop-color="#62d84e" stop-opacity="0"/></radialGradient>
+      <path id="qStar" d="M0-1 C.08-.35 .35-.08 1 0 C.35.08 .08.35 0 1 C-.08.35 -.35.08 -1 0 C-.35-.08 -.08-.35 0-1Z"/>
+    </defs>
+    <style>
+      .qwave{transform-origin:372px 405px;animation:qwave 2.6s ease-in-out infinite}
+      @keyframes qwave{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(5deg)}}
+      .qbub{animation:qbub 3.2s ease-in-out infinite}
+      @keyframes qbub{50%{transform:translateY(-10px)}}
+      .qstm{animation:qstm 3s ease-in-out infinite;opacity:0}
+      .qstm.b{animation-delay:1.5s}
+      @keyframes qstm{0%{opacity:0;transform:translateY(6px)}40%{opacity:.7}100%{opacity:0;transform:translateY(-18px)}}
+      .qtw{transform-box:fill-box;transform-origin:center;animation:qtw 2.8s ease-in-out infinite}
+      .qtw.b{animation-delay:.9s}.qtw.c{animation-delay:1.7s}
+      @keyframes qtw{0%,100%{transform:scale(.75) rotate(0);opacity:.75}50%{transform:scale(1.1) rotate(18deg);opacity:1}}
+    </style>
+
+    <!-- backdrop -->
+    <circle cx="285" cy="320" r="270" fill="url(#qGlow)"/>
+    <ellipse cx="280" cy="606" rx="240" ry="14" fill="#062b41" opacity=".1"/>
+
+    <!-- left arm (typing, disappears behind the laptop) -->
+    <path d="M204 405C184 450 190 498 230 516" fill="none" stroke="#4cc23a" stroke-width="50" stroke-linecap="round"/>
+
+    <!-- torso (hoodie) -->
+    <path d="M150 566C148 440 190 360 280 358C370 360 412 440 410 566Z" fill="url(#qHood)"/>
+    <path d="M410 566C412 470 392 402 340 372C374 420 384 492 380 566Z" fill="#3fae2f" opacity=".35"/>
+    <path d="M150 566C148 470 168 402 220 372C190 420 178 492 182 566Z" fill="#fff" opacity=".1"/>
+
+    <!-- hood opening + neck -->
+    <path d="M224 372C236 344 324 344 336 372C320 394 240 394 224 372Z" fill="#35a02a"/>
+    <path d="M258 300v70c0 12 44 12 44 0v-70z" fill="#e9b38c"/>
+    <path d="M224 372C242 396 318 396 336 372" fill="none" stroke="#4cc23a" stroke-width="12" stroke-linecap="round"/>
+    <!-- drawstrings -->
+    <g stroke="#f4f8fb" stroke-width="4.5" stroke-linecap="round" fill="none">
+      <path d="M264 392c-2 14-4 26-6 40"/><path d="M296 392c2 14 4 26 6 40"/>
+    </g>
+    <rect x="252" y="430" width="10" height="16" rx="4" fill="#c4f0bc"/><rect x="298" y="430" width="10" height="16" rx="4" fill="#c4f0bc"/>
+
+    <!-- raised arm + hand -->
+    <g class="qwave">
+      <path d="M372 405C404 352 424 296 432 240" fill="none" stroke="url(#qSleeve)" stroke-width="50" stroke-linecap="round"/>
+      <path d="M392 392C412 350 424 310 430 270" fill="none" stroke="#3fae2f" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+      <g transform="translate(434 220) rotate(6) scale(1.22)">
+        <!-- palm shade behind fingers -->
+        <rect x="-26" y="-64" width="52" height="40" rx="16" fill="#e9b38c"/>
+        <!-- fingers -->
+        <rect x="-26" y="-98" width="12.5" height="56" rx="6.25" fill="#f4c9a5"/>
+        <rect x="-12.5" y="-108" width="12.5" height="66" rx="6.25" fill="#f4c9a5"/>
+        <rect x="1" y="-104" width="12.5" height="62" rx="6.25" fill="#f4c9a5"/>
+        <rect x="14.5" y="-90" width="11.5" height="48" rx="5.75" fill="#f4c9a5"/>
+        <!-- thumb -->
+        <rect x="-7" y="-40" width="14" height="40" rx="7" fill="#f4c9a5" transform="translate(-20 -16) rotate(-50)"/>
+        <!-- palm -->
+        <rect x="-26" y="-58" width="52" height="64" rx="22" fill="#f4c9a5"/>
+      </g>
+      <!-- cuff -->
+      <path d="M432 246l1.500-12" stroke="#4cc23a" stroke-width="52" stroke-linecap="round"/>
+    </g>
+
+    <!-- head -->
+    <g transform="translate(0 10)">
+    <circle cx="208" cy="270" r="14" fill="#f4c9a5"/><circle cx="205" cy="271" r="6" fill="#e9b38c"/>
+    <circle cx="352" cy="270" r="14" fill="#f4c9a5"/><circle cx="355" cy="271" r="6" fill="#e9b38c"/>
+    <circle cx="280" cy="262" r="72" fill="#f4c9a5"/>
+    <path d="M280 334a72 72 0 0 1-60-32a74 74 0 0 0 120 0a72 72 0 0 1-60 32z" fill="#e9b38c" opacity=".35"/>
+    <!-- hair -->
+    <path d="M206 266C194 198 236 174 286 176C338 178 366 212 356 266C352 242 340 226 320 218C300 236 258 240 232 222C220 232 210 248 206 266Z" fill="#062b41"/>
+    <path d="M232 222C254 230 290 228 312 206C318 228 330 236 346 238C334 214 316 204 300 202" fill="#062b41"/>
+    <path d="M248 194C270 184 304 186 326 198" fill="none" stroke="#1b5c80" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+    <!-- face: looking up at the hand -->
+    <path d="M248 240q10-8 22-3M296 236q12-4 21 4" fill="none" stroke="#062b41" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="262" cy="260" rx="8" ry="9.500" fill="#062b41"/><ellipse cx="306" cy="260" rx="8" ry="9.500" fill="#062b41"/>
+    <circle cx="265" cy="256" r="3" fill="#fff"/><circle cx="309" cy="256" r="3" fill="#fff"/>
+    <ellipse cx="244" cy="288" rx="13" ry="8" fill="#f2907e" opacity=".45"/><ellipse cx="324" cy="288" rx="13" ry="8" fill="#f2907e" opacity=".45"/>
+    <path d="M268 292q18 3 36-2q-4 22-19 22q-14 0-17-20z" fill="#062b41"/>
+    <path d="M276 306q9-7 20-1q-4 7-10 7q-6 0-10-6z" fill="#e8776b"/>
+    </g>
+
+    <!-- laptop (back of lid facing us) -->
+    <rect x="164" y="404" width="232" height="144" rx="16" fill="url(#qLid)"/>
+    <path d="M180 405h200" stroke="#2a6f94" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    <circle cx="280" cy="476" r="46" fill="url(#qLogo)"/>
+    <use href="#qStar" transform="translate(280 476) scale(26)" fill="#62d84e"/>
+    <path d="M140 546h280l-6 14a8 8 0 0 1-7 5H153a8 8 0 0 1-7-5z" fill="url(#qBase)"/>
+    <path d="M140 546h280l-1.500 4H141.500z" fill="#fff" opacity=".6"/>
+
+    <!-- mug -->
+    <g transform="translate(64 512)">
+      <path d="M14 8c-8-10-4-20 2-26" class="qstm" fill="none" stroke="#a9bccb" stroke-width="4" stroke-linecap="round"/>
+      <path d="M28 8c-8-10-4-20 2-26" class="qstm b" fill="none" stroke="#a9bccb" stroke-width="4" stroke-linecap="round"/>
+      <path d="M42 24h6a12 12 0 0 1 0 24h-6" fill="none" stroke="#0b6e8a" stroke-width="7"/>
+      <rect x="0" y="12" width="46" height="54" rx="10" fill="#0b6e8a"/>
+      <rect x="0" y="12" width="46" height="10" rx="5" fill="#fff" opacity=".18"/>
+      <use href="#qStar" transform="translate(23 42) scale(9)" fill="#c4f0bc"/>
+    </g>
+
+    <!-- desk -->
+    <rect x="30" y="565" width="500" height="22" rx="11" fill="url(#qDesk)"/>
+    <rect x="44" y="567" width="472" height="3" rx="1.500" fill="#fff" opacity=".35"/>
+
+    <!-- sparkles / vibe -->
+    <g fill="#62d84e">
+      <g transform="translate(120 250) scale(34)"><use href="#qStar" class="qtw"/></g>
+      <g transform="translate(76 344) scale(18)"><use href="#qStar" class="qtw b" fill="#c4f0bc"/></g>
+      <g transform="translate(160 150) scale(20)"><use href="#qStar" class="qtw c"/></g>
+      <g transform="translate(470 300) scale(16)"><use href="#qStar" class="qtw c" fill="#c4f0bc"/></g>
+    </g>
+
+    <!-- question bubble -->
+    <g class="qbub">
+      <g transform="translate(522 62)">
+        <ellipse cx="4" cy="8" rx="54" ry="54" fill="#062b41" opacity=".12"/>
+        <path d="M-30 32l-26 40 46-24z" fill="#062b41"/>
+        <circle r="52" fill="#062b41"/>
+        <text x="0" y="24" text-anchor="middle" font-size="72" font-weight="800" fill="#62d84e" font-family="inherit">?</text>
+      </g>
+    </g>
+  </svg>
   <svg class="logo" viewBox="0 0 132 20" role="img" aria-label="ServiceNow" style="height:38px;position:absolute;left:120px;bottom:60px"><use href="#servicenow-logo"/></svg>
 </section>
 
